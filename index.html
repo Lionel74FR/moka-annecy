@@ -4,14 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MOKA — Café, bubble tea &amp; cocktails à Annecy</title>
-<meta name="description" content="MOKA — café, bubble tea et cocktails à Annecy. Un lieu, trois moments : morning, afternoon, night. 6 rue Vaugelas, ouvert du mardi au samedi.">
+<meta name="description" content="MOKA — café, bubble tea et cocktails à Annecy. Un lieu, trois moments : morning, afternoon, night. 6 rue Vaugelas, ouvert du mardi au samedi. Réservation en ligne.">
+<link rel="canonical" href="https://moka-annecy.vercel.app/">
 <meta name="theme-color" content="#C97B5E">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:title" content="MOKA — Café, bubble tea &amp; cocktails à Annecy">
 <meta property="og:description" content="Un lieu, trois moments : morning, afternoon, night. 6 rue Vaugelas, Annecy.">
-<meta property="og:image" content="/assets/img/moka-de-jour-lumiere-naturelle.jpg">
+<meta property="og:image" content="https://moka-annecy.vercel.app/assets/img/moka-de-jour-lumiere-naturelle.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +28,7 @@
 <!-- Header -->
 <header id="header">
   <div class="container">
-    <a href="#" class="logo-link" data-cursor-hover>
+    <a href="/" class="logo-link" aria-label="MOKA — accueil" data-cursor-hover>
       <img src="/assets/img/logo-day.png" alt="MOKA" class="logo logo-day">
       <img src="/assets/img/logo-night.png" alt="MOKA" class="logo logo-night">
     </a>
@@ -108,21 +109,21 @@
         <div class="name">Morning</div>
         <div class="time">9h — 14h</div>
         <div class="desc">Café d'origine, viennoiseries d'à côté, brunch léger. Le matin se prend lentement.</div>
-        <a href="#carte" class="arrow" data-cursor-hover>Voir la carte →</a>
+        <a href="#carte" class="arrow" data-carte-tab="morning" data-cursor-hover>Voir la carte →</a>
       </div>
       <div class="moment-card afternoon reveal">
         <div class="num">N° 02</div>
         <div class="name">Afternoon</div>
         <div class="time">14h — 18h</div>
         <div class="desc">Bubble tea, goûter signature, pâtisserie. À deux, à six, en sortie d'école.</div>
-        <a href="#carte" class="arrow" data-cursor-hover>Voir la carte →</a>
+        <a href="#carte" class="arrow" data-carte-tab="afternoon" data-cursor-hover>Voir la carte →</a>
       </div>
       <div class="moment-card night reveal">
         <div class="num">N° 03</div>
         <div class="name">Night</div>
         <div class="time">18h — tard</div>
         <div class="desc">Cocktails création, classiques bien faits, verre entre amis. Un cocon où l'on s'attarde volontiers.</div>
-        <a href="#carte" class="arrow" data-cursor-hover>Voir la carte →</a>
+        <a href="#carte" class="arrow" data-carte-tab="night" data-cursor-hover>Voir la carte →</a>
       </div>
     </div>
 
@@ -175,6 +176,227 @@
   </div>
 </section>
 
+<!-- La Carte (v5) -->
+<section id="carte" class="carte">
+  <div class="section-container">
+    <div class="carte-header reveal">
+      <div class="uppercase-label">La carte · Automne 2026</div>
+      <h2 class="section-title" style="margin-top: 16px;">Trois moments, une carte.</h2>
+      <p class="section-intro">Café d'origine le matin, bubble tea et pâtisseries l'après-midi, cocktails le soir. Tous nos prix sont en euros, taxes et service compris.</p>
+    </div>
+
+    <div class="carte-tabs" role="tablist" aria-label="Moments de la carte">
+      <button role="tab" id="tab-morning" aria-controls="panel-morning" aria-selected="true" data-tab="morning" data-cursor-hover><span class="t-num">01</span>Morning<span class="t-time">9h — 14h</span></button>
+      <button role="tab" id="tab-afternoon" aria-controls="panel-afternoon" aria-selected="false" data-tab="afternoon" data-cursor-hover><span class="t-num">02</span>Afternoon<span class="t-time">14h — 18h</span></button>
+      <button role="tab" id="tab-night" aria-controls="panel-night" aria-selected="false" data-tab="night" data-cursor-hover><span class="t-num">03</span>Night<span class="t-time">18h — tard</span></button>
+      <button role="tab" id="tab-partage" aria-controls="panel-partage" aria-selected="false" data-tab="partage" data-cursor-hover><span class="t-num">04</span>À partager<span class="t-time">planches &amp; snacks</span></button>
+    </div>
+
+    <!-- MORNING -->
+    <div class="carte-panel" id="panel-morning" role="tabpanel" aria-labelledby="tab-morning">
+      <p class="carte-lead">Café d'origine, viennoiseries d'à côté, brunch léger. Le matin se prend lentement chez MOKA.</p>
+      <div class="carte-formules">
+        <div class="formule">
+          <div class="f-lbl">Notre formule signature</div>
+          <div class="f-line"><span class="f-ttl">Brunch MOKA</span><span class="f-amt">16 €</span></div>
+          <p>Une boisson chaude, un jus pressé, une viennoiserie &amp; un bowl ou une tartine au choix.</p>
+        </div>
+        <div class="formule">
+          <div class="f-lbl">Notre formule express</div>
+          <div class="f-line"><span class="f-ttl">French p'tit déj</span><span class="f-amt">7 €</span></div>
+          <p>Baguette, beurre &amp; confiture, avec une boisson chaude au choix.</p>
+        </div>
+      </div>
+      <div class="carte-grid">
+        <div class="menu-block">
+          <h3>Cafés</h3>
+          <ul class="menu-list">
+            <li><span class="n">Espresso</span><span class="p">2,5</span></li>
+            <li><span class="n">Double espresso</span><span class="p">3,5</span></li>
+            <li><span class="n">Cortado</span><span class="p">3,5</span></li>
+            <li><span class="n">Cappuccino</span><span class="p">4</span></li>
+            <li><span class="n">Flat white</span><span class="p">4,5</span></li>
+            <li><span class="n">Latte</span><span class="p">5</span></li>
+            <li><span class="n">Mocaccino</span><span class="p">5,5</span></li>
+          </ul>
+        </div>
+        <div class="menu-block">
+          <h3>Latte créations</h3>
+          <ul class="menu-list">
+            <li><span class="n">Chai latte maison</span><span class="p">5</span></li>
+            <li><span class="n">Golden latte</span><span class="p">5</span></li>
+            <li><span class="n">Matcha bio</span><span class="p">5,5</span></li>
+            <li><span class="n">Chocolat chaud signature</span><span class="p">5</span></li>
+          </ul>
+          <h3>Thés &amp; infusions</h3>
+          <ul class="menu-list">
+            <li><span class="n">Earl Grey, Gunpowder bio, Rooibos vanille, Remède de grand-mère</span><span class="p">4,5</span></li>
+          </ul>
+        </div>
+        <div class="menu-block">
+          <h3>Bowls &amp; tartines</h3>
+          <ul class="menu-list">
+            <li><span class="n">Granola bowl<small>Granola maison, yaourt brassé, fruits du moment, miel d'acacia</small></span><span class="p">9</span></li>
+            <li><span class="n">Avocado toast<small>Pain de campagne grillé, avocat, graines, citron, fleur de sel</small></span><span class="p">11</span></li>
+            <li><span class="n">Tartine ricotta-miel</span><span class="p">9</span></li>
+            <li><span class="n">Tartine saumon fumé</span><span class="p">13</span></li>
+          </ul>
+        </div>
+        <div class="menu-block">
+          <h3>Jus &amp; boissons fraîches</h3>
+          <ul class="menu-list">
+            <li><span class="n">Orange pressée</span><span class="p">5</span></li>
+            <li><span class="n">Pomme</span><span class="p">4</span></li>
+            <li><span class="n">Carotte-pomme-gingembre</span><span class="p">6</span></li>
+            <li><span class="n">Smoothie du moment</span><span class="p">6</span></li>
+          </ul>
+          <h3>Viennoiseries</h3>
+          <ul class="menu-list">
+            <li><span class="n">Croissant pur beurre</span><span class="p">2</span></li>
+            <li><span class="n">Pain au chocolat</span><span class="p">2,2</span></li>
+            <li><span class="n">Brioche tranchée</span><span class="p">4</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- AFTERNOON -->
+    <div class="carte-panel" id="panel-afternoon" role="tabpanel" aria-labelledby="tab-afternoon" hidden>
+      <p class="carte-lead">L'heure du bubble tea, du goûter signature et de la pâtisserie. À deux, à six, en sortie d'école ou en pause shopping.</p>
+      <div class="carte-formules">
+        <div class="formule">
+          <div class="f-lbl">Notre formule</div>
+          <div class="f-line"><span class="f-ttl">Afternoon Tea</span><span class="f-amt">14 €</span></div>
+          <p>Un thé d'exception, une boisson fraîche &amp; trois mignardises de la vitrine.</p>
+        </div>
+      </div>
+      <div class="carte-grid">
+        <div class="menu-block">
+          <h3>Bubble tea <em>· 6,5</em></h3>
+          <ul class="menu-list">
+            <li><span class="n">Classique · Matcha · Taro · Fraise<small>Lait d'avoine, perles popping, sirops maison +0,5</small></span><span class="p">6,5</span></li>
+          </ul>
+          <h3>Smoothies &amp; glacés</h3>
+          <ul class="menu-list">
+            <li><span class="n">Tropical, Forest, Green</span><span class="p">6,5</span></li>
+            <li><span class="n">Iced latte, Iced matcha</span><span class="p">5,5</span></li>
+            <li><span class="n">Limonade hibiscus</span><span class="p">5,5</span></li>
+          </ul>
+        </div>
+        <div class="menu-block">
+          <h3>Goûters salés</h3>
+          <ul class="menu-list">
+            <li><span class="n">Focaccia tomate-mozza</span><span class="p">8</span></li>
+            <li><span class="n">Croque-monsieur maison<small>Pain de campagne toasté, jambon, comté</small></span><span class="p">11</span></li>
+            <li><span class="n">Quiche du jour</span><span class="p">9</span></li>
+          </ul>
+        </div>
+        <div class="menu-block">
+          <h3>La pâtisserie</h3>
+          <ul class="menu-list">
+            <li><span class="n">Cookie chocolat noir</span><span class="p">3,5</span></li>
+            <li><span class="n">Brownie chocolat-pécan</span><span class="p">4,5</span></li>
+            <li><span class="n">Cheesecake citron</span><span class="p">5,5</span></li>
+            <li><span class="n">Carrot cake</span><span class="p">5,5</span></li>
+            <li><span class="n">Banana bread</span><span class="p">4,5</span></li>
+            <li><span class="n">Cinnamon roll</span><span class="p">4,5</span></li>
+            <li><span class="n">Financier amande</span><span class="p">2,5</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- NIGHT -->
+    <div class="carte-panel carte-panel-night" id="panel-night" role="tabpanel" aria-labelledby="tab-night" hidden>
+      <p class="carte-lead">Afterwork en semaine, bar le vendredi et le samedi. Cocktails création, classiques bien faits, un cocon où l'on s'attarde.</p>
+      <div class="carte-grid">
+        <div class="menu-block">
+          <h3>Cocktails signature <em>· 13</em></h3>
+          <ul class="menu-list">
+            <li><span class="n">MOKA Spritz<small><b>St-Germain</b>, prosecco, sureau maison, écorce d'orange</small></span><span class="p">13</span></li>
+            <li><span class="n">Golden Hour<small>Bourbon, abricot, citron, miel, romarin brûlé</small></span><span class="p">13</span></li>
+            <li><span class="n">Disco Sour<small><b>Patrón Silver</b>, citron vert, hibiscus, blanc d'œuf</small></span><span class="p">13</span></li>
+            <li><span class="n">Le Refuge<small><b>Bombay Sapphire</b>, camomille infusée, citron, tonic</small></span><span class="p">13</span></li>
+            <li><span class="n">Café MOKA<small><b>Grey Goose</b>, liqueur de café, espresso maison</small></span><span class="p">13</span></li>
+            <li><span class="n">Perles &amp; Rhum<small><b>Bacardí Carta Blanca</b>, fraise, citron vert, perles popping</small></span><span class="p">13</span></li>
+          </ul>
+        </div>
+        <div class="menu-block">
+          <div class="encart-spritz">
+            <div class="encart-title">Les spritz · <span>St-Germain</span></div>
+            <ul class="menu-list dotted">
+              <li><span class="n">St-Germain Spritz</span><span class="p">13</span></li>
+              <li><span class="n">Italicus Spritz</span><span class="p">14</span></li>
+              <li><span class="n">Limoncello Spritz</span><span class="p">12</span></li>
+              <li><span class="n">Martini Bianco Spritz</span><span class="p">12</span></li>
+              <li><span class="n">Spritz Aperol</span><span class="p">12</span></li>
+              <li><span class="n">Virgin Martini Spritz</span><span class="p">9</span></li>
+            </ul>
+            <p class="encart-cap">Le St-Germain Spritz, c'est notre MOKA Spritz. Servi au verre à vin, glace pilée, écorce d'orange.</p>
+          </div>
+          <h3>Mocktails <em>· 9</em></h3>
+          <ul class="menu-list">
+            <li><span class="n">Sundown<small><b>Martini Vibrante</b>, pamplemousse, soda</small></span><span class="p">9</span></li>
+            <li><span class="n">Garden<small><b>Martini Floréale</b>, tonic, concombre</small></span><span class="p">9</span></li>
+          </ul>
+          <p class="menu-note">Sans alcool, à boire toute la soirée.</p>
+        </div>
+        <div class="menu-block">
+          <h3>Les classiques <em>· 12</em></h3>
+          <ul class="menu-list">
+            <li><span class="n">Negroni</span><span class="p">12</span></li>
+            <li><span class="n">Margarita <b>Patrón</b></span><span class="p">12</span></li>
+            <li><span class="n">Old Fashioned</span><span class="p">12</span></li>
+            <li><span class="n">Gin Tonic <b>Bombay</b></span><span class="p">12</span></li>
+            <li><span class="n">Mojito <b>Bacardí</b></span><span class="p">12</span></li>
+            <li><span class="n">Daiquiri <b>Bacardí</b></span><span class="p">12</span></li>
+            <li><span class="n">Moscow Mule <b>Grey Goose</b></span><span class="p">13</span></li>
+          </ul>
+        </div>
+        <div class="menu-block">
+          <h3>Vins</h3>
+          <ul class="menu-list">
+            <li><span class="n">Notre sélection au verre · 12 cl<small>3 blancs, 3 rouges, 1 rosé, 1 pétillant</small></span><span class="p">6 — 9</span></li>
+            <li><span class="n">À la bouteille</span><span class="p">28 — 65</span></li>
+          </ul>
+          <h3>Bières</h3>
+          <ul class="menu-list">
+            <li><span class="n">Funambules Hazy IPA · 25 / 50 cl</span><span class="p">5 / 8,5</span></li>
+            <li><span class="n">Blonde de la Cour · 25 / 50 cl</span><span class="p">4,5 / 7,5</span></li>
+            <li><span class="n">Artisanales en bouteille</span><span class="p">5,5 — 7</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- À PARTAGER -->
+    <div class="carte-panel" id="panel-partage" role="tabpanel" aria-labelledby="tab-partage" hidden>
+      <p class="carte-lead">Planches et snacks pour accompagner le verre, dès l'afterwork.</p>
+      <div class="carte-grid carte-grid-2">
+        <div class="menu-block">
+          <h3>Planches <em>· pour deux</em></h3>
+          <ul class="menu-list">
+            <li><span class="n">Planche MOKA<small>Charcuterie de Savoie, comté affiné, focaccia, olives, pickles maison</small></span><span class="p">22</span></li>
+            <li><span class="n">Planche Bergère<small>Trois fromages, confiture maison, noix, pain de campagne</small></span><span class="p">18</span></li>
+            <li><span class="n">Planche Mer<small>Saumon fumé, truite, terrine de poisson, focaccia, citron</small></span><span class="p">24</span></li>
+          </ul>
+        </div>
+        <div class="menu-block">
+          <h3>À l'unité</h3>
+          <ul class="menu-list">
+            <li><span class="n">Olives marinées maison</span><span class="p">5</span></li>
+            <li><span class="n">Houmous &amp; focaccia</span><span class="p">7</span></li>
+            <li><span class="n">Stracciatella, tomate, basilic</span><span class="p">11</span></li>
+            <li><span class="n">Tartare de bœuf au couteau<small>Servi avec ses condiments, à assaisonner soi-même</small></span><span class="p">14</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="carte-legal">Prix en euros, taxes et service compris. L'abus d'alcool est dangereux pour la santé, à consommer avec modération. Liste des allergènes disponible au comptoir.</p>
+  </div>
+</section>
+
 <!-- Événements -->
 <section id="events" class="events">
   <div class="section-container">
@@ -183,7 +405,7 @@
         <div class="uppercase-label">Cette semaine</div>
         <h2 class="section-title reveal-text" style="margin-top: 16px;">Chez MOKA.</h2>
       </div>
-      <a href="#events" class="btn-ghost" data-cursor-hover>Voir tout le programme →</a>
+      <a href="https://instagram.com/moka_annecy" target="_blank" rel="noopener" class="btn-ghost" data-cursor-hover>Tout le programme sur Instagram →</a>
     </div>
 
     <div class="events-grid">
@@ -201,23 +423,160 @@
         <div class="title">Nom du DJ à venir</div>
         <div class="hours">22h — 1h · libre</div>
       </div>
-      <div class="event-card reveal" data-cursor-hover>
+      <a href="#ateliers" class="event-card reveal" data-cursor-hover>
         <div class="month">Septembre</div>
         <div class="day">18</div>
         <div class="type">Atelier signature</div>
         <div class="title">Cocktails chez MOKA</div>
         <div class="hours">19h · 6 à 8 pers · 70 €/pers</div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- CTA final -->
+<!-- Ateliers -->
+<section id="ateliers" class="ateliers">
+  <div class="section-container">
+    <div class="split">
+      <div class="split-text reveal">
+        <div class="uppercase-label">Ateliers signature</div>
+        <h2 class="section-title" style="margin-top: 16px;">Cocktails chez MOKA.</h2>
+        <p class="section-intro" style="margin-bottom: 32px;">Deux heures derrière le comptoir avec notre barman : trois cocktails à apprendre, à secouer et à boire. EVJF, anniversaires, équipes qui veulent autre chose qu'un escape game.</p>
+        <ul class="facts">
+          <li><strong>2 h</strong><span>de pratique au bar</span></li>
+          <li><strong>6 à 8</strong><span>personnes par atelier</span></li>
+          <li><strong>70 €</strong><span>par personne, tout compris</span></li>
+        </ul>
+      </div>
+      <form class="booking-form reveal" data-type="atelier" novalidate>
+        <h3>Demander une date</h3>
+        <div class="grid-2">
+          <label>Date souhaitée<input type="date" name="date" required data-min-today></label>
+          <label>Nombre de personnes
+            <select name="guests" required>
+              <option value="6">6 personnes</option><option value="7">7 personnes</option><option value="8">8 personnes</option>
+            </select>
+          </label>
+          <label>Nom<input type="text" name="name" autocomplete="name" required></label>
+          <label>Téléphone<input type="tel" name="phone" autocomplete="tel" required></label>
+          <label class="full">Email<input type="email" name="email" autocomplete="email" required></label>
+          <label class="full">Occasion, envies, questions<textarea name="message" rows="3" placeholder="EVJF, anniversaire, séminaire…"></textarea></label>
+        </div>
+        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit" class="btn-primary" data-cursor-hover>Envoyer la demande</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Privatisation -->
+<section id="privatisation" class="privatisation">
+  <div class="section-container">
+    <div class="split split-reverse">
+      <div class="split-text reveal">
+        <div class="uppercase-label">Privatisation</div>
+        <h2 class="section-title" style="margin-top: 16px;">Le lieu, rien que pour vous.</h2>
+        <p class="section-intro" style="margin-bottom: 32px;">Afterwork d'équipe, lancement, anniversaire, soirée privée : MOKA se privatise en partie ou en totalité, du petit-déjeuner au dernier verre. Carte cocktails, planches et formules sur mesure.</p>
+        <ul class="facts">
+          <li><strong>Sur devis</strong><span>selon le jour et le créneau</span></li>
+          <li><strong>Mar → Sam</strong><span>matin, après-midi ou soirée</span></li>
+          <li><strong>Réponse 48 h</strong><span>par email ou téléphone</span></li>
+        </ul>
+      </div>
+      <form class="booking-form reveal" data-type="privatisation" novalidate>
+        <h3>Parlez-nous de votre événement</h3>
+        <div class="grid-2">
+          <label>Type d'événement
+            <select name="event" required>
+              <option value="">Choisir…</option>
+              <option>Afterwork / séminaire</option>
+              <option>Anniversaire</option>
+              <option>EVJF / EVG</option>
+              <option>Lancement / soirée marque</option>
+              <option>Autre</option>
+            </select>
+          </label>
+          <label>Date souhaitée<input type="date" name="date" required data-min-today></label>
+          <label>Nombre d'invités<input type="number" name="guests" min="10" max="120" inputmode="numeric" required placeholder="ex. 30"></label>
+          <label>Nom / société<input type="text" name="name" autocomplete="organization" required></label>
+          <label>Téléphone<input type="tel" name="phone" autocomplete="tel" required></label>
+          <label>Email<input type="email" name="email" autocomplete="email" required></label>
+          <label class="full">Votre projet<textarea name="message" rows="3" placeholder="Horaires, ambiance, budget par personne…"></textarea></label>
+        </div>
+        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit" class="btn-primary" data-cursor-hover>Demander un devis</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Réservation -->
 <section id="reserve" class="cta-final">
   <div class="cta-content">
     <h2 id="ctaTitle" class="reveal-chars">À ce soir.</h2>
-    <p class="cta-sub">Ou passez sans prévenir &mdash; on trouve toujours une place au comptoir.</p>
-    <a href="#" class="btn-primary" data-cursor-hover>Réserver ma table</a>
+    <p class="cta-sub">Réservez votre table en ligne. Ou passez sans prévenir : on trouve toujours une place au comptoir.</p>
+    <form class="booking-form booking-table" data-type="table" novalidate>
+      <div class="grid-4">
+        <label>Date<input type="date" name="date" required data-min-today data-open-days></label>
+        <label>Heure
+          <select name="time" required disabled><option value="">Choisir une date</option></select>
+        </label>
+        <label>Couverts
+          <select name="guests" required>
+            <option value="1">1 personne</option>
+            <option value="2" selected>2 personnes</option>
+            <option value="3">3 personnes</option><option value="4">4 personnes</option>
+            <option value="5">5 personnes</option><option value="6">6 personnes</option>
+            <option value="7">7 personnes</option><option value="8">8 personnes</option>
+            <option value="9">9 personnes</option><option value="10">10 personnes</option>
+          </select>
+        </label>
+        <label>Nom<input type="text" name="name" autocomplete="name" required></label>
+        <label>Téléphone<input type="tel" name="phone" autocomplete="tel" required></label>
+        <label>Email<input type="email" name="email" autocomplete="email" required></label>
+        <label class="span-2">Une précision ?<input type="text" name="message" placeholder="Anniversaire, terrasse, allergie…"></label>
+      </div>
+      <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="form-hint">Plus de 10 personnes ? <a href="#privatisation">Faites une demande de groupe</a>.</p>
+      <button type="submit" class="btn-primary" data-cursor-hover>Réserver ma table</button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact">
+  <div class="section-container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="uppercase-label">Contact</div>
+        <h2 class="section-title" style="margin-top: 16px;">Nous trouver.</h2>
+        <div class="contact-cols">
+          <div>
+            <h4>Adresse</h4>
+            <p>6 rue Vaugelas<br>74000 Annecy</p>
+            <p><a href="https://www.google.com/maps/search/?api=1&amp;query=6+rue+Vaugelas+74000+Annecy" target="_blank" rel="noopener" data-cursor-hover>Itinéraire →</a></p>
+          </div>
+          <div>
+            <h4>Horaires</h4>
+            <p>Mardi → Jeudi<br>9h — 20h30</p>
+            <p>Vendredi &amp; Samedi<br>9h — 1h</p>
+            <p class="muted">Dimanche &amp; lundi fermés</p>
+          </div>
+          <div>
+            <h4>Nous joindre</h4>
+            <p><a href="tel:+33456190268" data-cursor-hover>04 56 19 02 68</a><br>
+            <a href="mailto:bonjour@moka-annecy.com" data-cursor-hover>bonjour@moka-annecy.com</a><br>
+            <a href="https://instagram.com/moka_annecy" target="_blank" rel="noopener" data-cursor-hover>@moka_annecy</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="map-wrap reveal">
+        <iframe title="Plan d'accès MOKA, 6 rue Vaugelas, Annecy" src="https://www.google.com/maps?q=6%20rue%20Vaugelas%2C%2074000%20Annecy&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -231,7 +590,7 @@
       </div>
       <div class="footer-col">
         <h4>Horaires</h4>
-        <p>Mardi → Jeudi<br>9h — 20h</p>
+        <p>Mardi → Jeudi<br>9h — 20h30</p>
         <p style="margin-top: 12px;">Vendredi &amp; Samedi<br>9h — 1h</p>
         <p style="margin-top: 12px; opacity: 0.5;">Dim &amp; Lun fermés</p>
       </div>
@@ -239,40 +598,30 @@
         <h4>Nous trouver</h4>
         <p>6 rue Vaugelas<br>74000 Annecy</p>
         <p style="margin-top: 12px;">
-          <a href="tel:+33456190268">04 56 19 02 68</a><br>
+          <a href="tel:+33456190268">04 56 19 02 68</a>
           <a href="mailto:bonjour@moka-annecy.com">bonjour@moka-annecy.com</a>
         </p>
       </div>
       <div class="footer-col">
         <h4>Suivez-nous</h4>
         <p>
-          <a href="https://instagram.com/moka_annecy" target="_blank">@moka_annecy</a>
-          <a href="#" target="_blank">Google Business</a>
+          <a href="https://instagram.com/moka_annecy" target="_blank" rel="noopener">@moka_annecy</a>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=MOKA+6+rue+Vaugelas+Annecy" target="_blank" rel="noopener">Google Maps</a>
+          <a href="#reserve">Réserver une table</a>
         </p>
       </div>
     </div>
     <div class="footer-bottom">
       <div>© 2026 MOKA &mdash; un lieu Matalon · <span class="accent">avec amour depuis Annecy</span></div>
       <div class="legal">
-        <a href="#">Mentions légales</a>
-        <a href="#">Confidentialité</a>
-        <a href="#">Cookies</a>
-        <a href="#">Développé par proIA</a>
+        <a href="/mentions-legales">Mentions légales</a>
+        <a href="/confidentialite">Confidentialité</a>
+        <a href="/confidentialite#cookies">Cookies</a>
+        <span>Développé par proIA</span>
       </div>
     </div>
   </div>
 </footer>
-
-<!-- Time demo widget (à retirer en prod) -->
-<div class="time-demo">
-  <strong>Aperçu palette</strong>
-  <div class="btns">
-    <button data-set-time="morning">Morning</button>
-    <button data-set-time="afternoon" class="active">Afternoon</button>
-    <button data-set-time="night">Night</button>
-  </div>
-  <div style="font-size: 10px; opacity: 0.6; line-height: 1.4;">En prod, bascule auto selon l'heure de visite du user.</div>
-</div>
 
 <script src="/assets/js/main.js" defer></script>
 
