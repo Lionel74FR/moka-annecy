@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr" data-time="afternoon">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MOKA — Café, bubble tea &amp; cocktails à Annecy</title>
+<meta name="description" content="MOKA — café, bubble tea et cocktails à Annecy. Un lieu, trois moments : morning, afternoon, night. 6 rue Vaugelas, ouvert du mardi au samedi.">
+<meta name="theme-color" content="#C97B5E">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="MOKA — Café, bubble tea &amp; cocktails à Annecy">
+<meta property="og:description" content="Un lieu, trois moments : morning, afternoon, night. 6 rue Vaugelas, Annecy.">
+<meta property="og:image" content="/assets/img/moka-de-jour-lumiere-naturelle.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..800,100;1,9..144,400..800,100&family=Instrument+Sans:wght@300;400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div class="cursor-outer" id="cursorOuter"></div>
+<div class="cursor-inner" id="cursorInner"></div>
+
+<!-- Header -->
+<header id="header">
+  <div class="container">
+    <a href="#" class="logo-link" data-cursor-hover>
+      <img src="/assets/img/logo-day.png" alt="MOKA" class="logo logo-day">
+      <img src="/assets/img/logo-night.png" alt="MOKA" class="logo logo-night">
+    </a>
+    <nav>
+      <a href="#concept" data-cursor-hover>Concept</a>
+      <a href="#carte" data-cursor-hover>La Carte</a>
+      <a href="#events" data-cursor-hover>Événements</a>
+      <a href="#ateliers" data-cursor-hover>Ateliers</a>
+      <a href="#privatisation" data-cursor-hover>Privatisation</a>
+      <a href="#contact" data-cursor-hover>Contact</a>
+    </nav>
+    <button class="burger" aria-label="Menu" data-menu-toggle>
+      <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M6 18L18 6"/></svg>
+    </button>
+    <a href="#reserve" class="btn-icon" aria-label="Réserver" data-cursor-hover>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="5" width="18" height="16" rx="3.5"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+        <line x1="8" y1="3" x2="8" y2="7"/>
+        <line x1="16" y1="3" x2="16" y2="7"/>
+        <circle cx="12" cy="15.5" r="1.4" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+  </div>
+</header>
+
+<!-- Menu mobile overlay -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="#concept">Concept</a>
+  <a href="#carte">La Carte</a>
+  <a href="#events">Événements</a>
+  <a href="#ateliers">Ateliers</a>
+  <a href="#privatisation">Privatisation</a>
+  <a href="#contact">Contact</a>
+  <a href="#reserve" class="btn-primary">Réserver ma table</a>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-sun-wrap" id="heroSunWrap"><div class="hero-sun"></div></div>
+  <div class="hero-content">
+    <h1 class="hero-lines">
+      <span class="hero-line reveal-line" data-color="terracotta">
+        <span class="hero-line-prefix">À 9h ça</span>
+        <span class="hero-verb verb-morning">réconforte.</span>
+      </span>
+      <span class="hero-line reveal-line" data-color="disco">
+        <span class="hero-line-prefix">À 16h ça</span>
+        <span class="hero-verb verb-afternoon">pétille.</span>
+      </span>
+      <span class="hero-line reveal-line" data-color="powder">
+        <span class="hero-line-prefix">À 23h ça</span>
+        <span class="hero-verb verb-night">s'attarde.</span>
+      </span>
+    </h1>
+    <p class="hero-sub">Café · Bubble tea · Cocktails · Cocon d'Annecy</p>
+    <div class="hero-cta">
+      <a href="#reserve" class="btn-primary" data-cursor-hover>Réserver ma table</a>
+      <a href="#concept" class="btn-ghost" data-cursor-hover>Découvrir le lieu</a>
+    </div>
+  </div>
+  <a href="#concept" class="scroll-hint" data-cursor-hover>
+    Faire défiler
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+  </a>
+</section>
+
+<!-- Concept 3 moments -->
+<section id="concept" class="moments">
+  <div class="section-container">
+    <h2 class="section-title reveal reveal-text">Une marque, trois moments.</h2>
+    <p class="section-intro reveal">Un nom de café, une âme de bar. MOKA change de peau selon l'heure. Un espace qui accompagne la journée, du café du matin au dernier cocktail du weekend.</p>
+
+    <div class="moments-grid">
+      <div class="moment-card morning reveal">
+        <div class="num">N° 01</div>
+        <div class="name">Morning</div>
+        <div class="time">9h — 14h</div>
+        <div class="desc">Café d'origine, viennoiseries d'à côté, brunch léger. Le matin se prend lentement.</div>
+        <a href="#carte" class="arrow" data-cursor-hover>Voir la carte →</a>
+      </div>
+      <div class="moment-card afternoon reveal">
+        <div class="num">N° 02</div>
+        <div class="name">Afternoon</div>
+        <div class="time">14h — 18h</div>
+        <div class="desc">Bubble tea, goûter signature, pâtisserie. À deux, à six, en sortie d'école.</div>
+        <a href="#carte" class="arrow" data-cursor-hover>Voir la carte →</a>
+      </div>
+      <div class="moment-card night reveal">
+        <div class="num">N° 03</div>
+        <div class="name">Night</div>
+        <div class="time">18h — tard</div>
+        <div class="desc">Cocktails création, classiques bien faits, verre entre amis. Un cocon où l'on s'attarde volontiers.</div>
+        <a href="#carte" class="arrow" data-cursor-hover>Voir la carte →</a>
+      </div>
+    </div>
+
+    <div class="tagline-box reveal">
+      <p>À 9h ça réconforte · à 16h ça pétille · à 23h ça s'attarde.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Le Lieu -->
+<section class="lieu">
+  <div class="lieu-hero">
+    <div class="lieu-slider" id="lieuSlider">
+      <img loading="lazy" src="/assets/img/moka-de-jour-lumiere-naturelle.jpg" alt="MOKA de jour, lumière naturelle et végétation suspendue" class="lieu-slide active">
+      <img loading="lazy" src="/assets/img/globe-lumineux-et-olivier-suspendu.jpg" alt="Globe lumineux et olivier suspendu" class="lieu-slide">
+      <img loading="lazy" src="/assets/img/moka-la-nuit-ambiance-chaude.jpg" alt="MOKA la nuit, ambiance chaude et cocon" class="lieu-slide">
+      <img loading="lazy" src="/assets/img/verre-de-vin-sur-table.jpg" alt="Verre de vin sur table, bougie allumée" class="lieu-slide">
+    </div>
+    <div class="lieu-shimmer" id="lieuShimmer" aria-hidden="true"></div>
+    <div class="lieu-hero-overlay"></div>
+    <div class="lieu-hero-content">
+      <div class="uppercase-label reveal">Le lieu</div>
+      <h2 class="lieu-hero-title reveal-text reveal">Ici, on vous cocoone.</h2>
+      <p class="lieu-hero-lead reveal">Terracotta enduit, arches maçonnées, végétation suspendue. Un cocon qui traverse la journée &mdash; refuge chaud le matin, atmosphère à part le soir.</p>
+      <div class="lieu-hero-address reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+        <span>6 rue Vaugelas &mdash; Annecy</span>
+      </div>
+    </div>
+    <div class="lieu-dots" id="lieuDots"></div>
+  </div>
+</section>
+
+<!-- Détails d'ambiance -->
+<section class="details">
+  <div class="section-container">
+    <div class="details-header reveal">
+      <div class="uppercase-label">Les détails</div>
+      <h2 class="section-title reveal-text" style="margin-top: 16px; max-width: 720px;">Ce qui fait qu'on reste.</h2>
+      <p class="section-intro" style="max-width: 560px;">Une lumière tamisée qui tombe juste, un verre qui accroche la bougie, une plante qui frôle la tempe. MOKA, c'est un lieu où l'on prend le temps.</p>
+    </div>
+    <div class="details-grid">
+      <figure class="details-card details-card-tall">
+        <img loading="lazy" src="/assets/img/globe-lumineux-et-olivier-suspendu.jpg" alt="Globe lumineux suspendu dans la végétation">
+      </figure>
+      <figure class="details-card">
+        <img loading="lazy" src="/assets/img/verre-de-vin-sur-table.jpg" alt="Verre de vin sur table en bois, bougie allumée">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Événements -->
+<section id="events" class="events">
+  <div class="section-container">
+    <div class="events-header reveal">
+      <div>
+        <div class="uppercase-label">Cette semaine</div>
+        <h2 class="section-title reveal-text" style="margin-top: 16px;">Chez MOKA.</h2>
+      </div>
+      <a href="#events" class="btn-ghost" data-cursor-hover>Voir tout le programme →</a>
+    </div>
+
+    <div class="events-grid">
+      <div class="event-card reveal" data-cursor-hover>
+        <div class="month">Septembre</div>
+        <div class="day">12</div>
+        <div class="type">Soirée d'ouverture</div>
+        <div class="title">MOKA ouvre ses portes</div>
+        <div class="hours">19h — 1h · sur invitation</div>
+      </div>
+      <div class="event-card reveal" data-cursor-hover>
+        <div class="month">Septembre</div>
+        <div class="day">13</div>
+        <div class="type">DJ Set</div>
+        <div class="title">Nom du DJ à venir</div>
+        <div class="hours">22h — 1h · libre</div>
+      </div>
+      <div class="event-card reveal" data-cursor-hover>
+        <div class="month">Septembre</div>
+        <div class="day">18</div>
+        <div class="type">Atelier signature</div>
+        <div class="title">Cocktails chez MOKA</div>
+        <div class="hours">19h · 6 à 8 pers · 70 €/pers</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA final -->
+<section id="reserve" class="cta-final">
+  <div class="cta-content">
+    <h2 id="ctaTitle" class="reveal-chars">À ce soir.</h2>
+    <p class="cta-sub">Ou passez sans prévenir &mdash; on trouve toujours une place au comptoir.</p>
+    <a href="#" class="btn-primary" data-cursor-hover>Réserver ma table</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3><img src="/assets/img/logo-night.png" alt="MOKA" class="footer-logo"></h3>
+        <p>Bonjour, bonsoir, bonne journée. Bar · Café · Cocktails à Annecy.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Horaires</h4>
+        <p>Mardi → Jeudi<br>9h — 20h</p>
+        <p style="margin-top: 12px;">Vendredi &amp; Samedi<br>9h — 1h</p>
+        <p style="margin-top: 12px; opacity: 0.5;">Dim &amp; Lun fermés</p>
+      </div>
+      <div class="footer-col">
+        <h4>Nous trouver</h4>
+        <p>6 rue Vaugelas<br>74000 Annecy</p>
+        <p style="margin-top: 12px;">
+          <a href="tel:+33456190268">04 56 19 02 68</a><br>
+          <a href="mailto:bonjour@moka-annecy.com">bonjour@moka-annecy.com</a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Suivez-nous</h4>
+        <p>
+          <a href="https://instagram.com/moka_annecy" target="_blank">@moka_annecy</a>
+          <a href="#" target="_blank">Google Business</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 MOKA &mdash; un lieu Matalon · <span class="accent">avec amour depuis Annecy</span></div>
+      <div class="legal">
+        <a href="#">Mentions légales</a>
+        <a href="#">Confidentialité</a>
+        <a href="#">Cookies</a>
+        <a href="#">Développé par proIA</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Time demo widget (à retirer en prod) -->
+<div class="time-demo">
+  <strong>Aperçu palette</strong>
+  <div class="btns">
+    <button data-set-time="morning">Morning</button>
+    <button data-set-time="afternoon" class="active">Afternoon</button>
+    <button data-set-time="night">Night</button>
+  </div>
+  <div style="font-size: 10px; opacity: 0.6; line-height: 1.4;">En prod, bascule auto selon l'heure de visite du user.</div>
+</div>
+
+<script src="/assets/js/main.js" defer></script>
+
+</body>
+</html>
