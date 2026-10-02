@@ -1,24 +1,29 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  /* Palette MOKA base */
-  --cream: #FAF4EC;
-  --terracotta: #C97B5E;
-  --terracotta-dark: #a8624a;
-  --disco: #E8B530;
-  --powder: #A8BBD3;
-  --ink: #2A2520;
-  --ink-mute: #6B5D52;
+  /* Palette MOKA v5 — relevée dans la salle réelle (oct. 2026) */
+  --cream: #FAF4EC;        /* texte sur fonds sombres */
+  --rouille: #A0473A;      /* murs principaux — dominante */
+  --sang: #6E1F1C;         /* murs côté bar */
+  --terracotta: #C9714F;   /* niches, carrelage — seule couleur de CTA */
+  --terracotta-dark: #A85A3C;
+  --disco: #E8B530;        /* or des dômes — labels et accents, jamais en bouton */
+  --chene: #B08458;        /* tasseaux, parquet */
+  --noir: #1F1C1B;         /* dômes, plinthes */
+  --petrole: #1F4D5C;      /* accent rare (entrée) */
+  --powder: #8FB3BF;       /* pétrole éclairci, lisible sur fond sombre */
+  --ink: #2B1512;
+  --ink-mute: #75594F;
 
   /* Palette dynamique — valeurs par défaut afternoon */
-  --bg: #FAF0E0;
-  --bg-alt: #FFF7E5;
-  --text: #2A2520;
-  --text-mute: #6B5D52;
-  --accent: #C97B5E;
+  --bg: #F3E2D3;
+  --bg-alt: #FAF4EC;
+  --text: #2B1512;
+  --text-mute: #75594F;
+  --accent: #A0473A;
   --accent-2: #E8B530;
-  --nav-blur: rgba(250, 244, 236, 0.75);
-  --border: rgba(42, 37, 32, 0.12);
+  --nav-blur: rgba(243, 226, 211, 0.78);
+  --border: rgba(43, 21, 18, 0.12);
 
   --transition-slow: 800ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -29,39 +34,39 @@
   --serif-var: "opsz" 144, "SOFT" 100, "WONK" 0;
 }
 
-/* Palette morning : lumineux, chaud, doux */
+/* Palette morning : crème lumineux, accents rouille */
 html[data-time="morning"] {
-  --bg: #FFF7E5;
-  --bg-alt: #FAF4EC;
-  --text: #2A2520;
-  --text-mute: #6B5D52;
-  --accent: #C97B5E;
+  --bg: #FAF4EC;
+  --bg-alt: #F4E8DA;
+  --text: #2B1512;
+  --text-mute: #75594F;
+  --accent: #A0473A;
   --accent-2: #E8B530;
-  --nav-blur: rgba(255, 247, 229, 0.8);
-  --border: rgba(42, 37, 32, 0.1);
+  --nav-blur: rgba(250, 244, 236, 0.8);
+  --border: rgba(43, 21, 18, 0.1);
 }
 
-/* Palette afternoon : crème pêche + disco */
+/* Palette afternoon : terracotta clair + or */
 html[data-time="afternoon"] {
-  --bg: #FAF0E0;
-  --bg-alt: #FFF7E5;
-  --text: #2A2520;
-  --text-mute: #6B5D52;
-  --accent: #C97B5E;
+  --bg: #F3E2D3;
+  --bg-alt: #FAF4EC;
+  --text: #2B1512;
+  --text-mute: #75594F;
+  --accent: #A0473A;
   --accent-2: #E8B530;
-  --nav-blur: rgba(250, 240, 224, 0.78);
-  --border: rgba(42, 37, 32, 0.12);
+  --nav-blur: rgba(243, 226, 211, 0.78);
+  --border: rgba(43, 21, 18, 0.12);
 }
 
-/* Palette night : encre profonde + accents chauds */
+/* Palette night : sang de bœuf profond + or des dômes */
 html[data-time="night"] {
-  --bg: #1E1A16;
-  --bg-alt: #2A2520;
+  --bg: #2A0F0D;
+  --bg-alt: #3D1613;
   --text: #FAF4EC;
   --text-mute: rgba(250, 244, 236, 0.65);
   --accent: #E8B530;
-  --accent-2: #C97B5E;
-  --nav-blur: rgba(30, 26, 22, 0.75);
+  --accent-2: #C9714F;
+  --nav-blur: rgba(42, 15, 13, 0.78);
   --border: rgba(250, 244, 236, 0.15);
 }
 
@@ -375,7 +380,7 @@ body.menu-open .mobile-menu {
   animation: heroSunDrift 22s ease-in-out infinite, heroSunPulse 8s ease-in-out infinite;
 }
 html[data-time="night"] .hero-sun {
-  background: radial-gradient(circle at 30% 30%, rgba(232, 181, 48, 0.6), rgba(201, 123, 94, 0.25) 60%, transparent 75%);
+  background: radial-gradient(circle at 30% 30%, rgba(232, 181, 48, 0.6), rgba(201, 113, 79, 0.25) 60%, transparent 75%);
 }
 @keyframes heroSunDrift {
   0%, 100% { transform: translate(0, 0); }
@@ -588,15 +593,15 @@ section { position: relative; }
   box-shadow: 0 24px 48px -12px rgba(42, 37, 32, 0.18);
 }
 .moment-card.morning {
-  background: linear-gradient(160deg, #FFF7E5, #FAF4EC);
+  background: linear-gradient(160deg, #FAF4EC, #F4E8DA);
   color: var(--ink);
 }
 .moment-card.afternoon {
-  background: linear-gradient(160deg, #FAF0E0, #F5E8D5);
+  background: linear-gradient(160deg, #F3E2D3, #EBD3C0);
   color: var(--ink);
 }
 .moment-card.night {
-  background: linear-gradient(160deg, #2A2520, #1E1A16);
+  background: linear-gradient(160deg, #4A1A16, #2A0F0D);
   color: var(--cream);
 }
 .moment-card .num {
@@ -1302,7 +1307,7 @@ html[data-time="night"] .carte-tabs button[aria-selected="true"] .t-num { color:
 .booking-form select:disabled { opacity: .55; }
 .booking-form textarea { resize: vertical; min-height: 84px; }
 .booking-form input:focus, .booking-form select:focus, .booking-form textarea:focus {
-  outline: none; border-color: var(--terracotta); box-shadow: 0 0 0 3px rgba(201,123,94,.2);
+  outline: none; border-color: var(--terracotta); box-shadow: 0 0 0 3px rgba(201,113,79,.2);
 }
 .booking-form .invalid { border-color: #B3261E; box-shadow: 0 0 0 3px rgba(179,38,30,.12); }
 .booking-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
