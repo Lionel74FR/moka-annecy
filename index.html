@@ -17,7 +17,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..800,100;1,9..144,400..800,100&family=Instrument+Sans:wght@300;400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/style.css?v=home-neon">
+<script>
+/* Mode teasing jusqu'à l'ouverture : seule la home + newsletter + réseaux. Ajouter ?preview à l'URL pour voir le site complet. */
+(function(){var o=Date.parse('2026-10-15T00:00:00+02:00');if(Date.now()<o&&!/[?&]preview\b/.test(location.search))document.documentElement.classList.add('teaser');})();
+</script>
+<link rel="stylesheet" href="/assets/css/style.css?v=teaser">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"MOKA","description":"Café le matin, goûter l'après-midi, cocktails le soir.","telephone":"+33456190268","address":{"@type":"PostalAddress","streetAddress":"6 rue Vaugelas","postalCode":"74000","addressLocality":"Annecy","addressCountry":"FR"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday"],"opens":"09:00","closes":"20:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"09:00","closes":"01:00"}],"sameAs":["https://instagram.com/moka_annecy","https://www.facebook.com/profile.php?id=61595314552709","https://share.google/3S4rHN7YgjlPMRwj6"]}
 </script>
@@ -91,6 +95,17 @@
     </h1>
     <p class="hero-opening reveal-line" data-opening="2026-10-15">Ouverture jeudi 15.10</p>
     <p class="hero-sub">Le matin, l’après-midi, le soir <span class="hero-sub-addr">— 6&nbsp;rue&nbsp;Vaugelas, Annecy</span></p>
+    <form class="hero-newsletter" novalidate>
+      <p class="hn-lead">Laissez votre email : on vous écrit avant tout le monde pour l’ouverture.</p>
+      <div class="hn-row">
+        <label class="sr-only" for="hnEmail">Votre email</label>
+        <input id="hnEmail" type="email" name="email" placeholder="votre@email.com" autocomplete="email" required>
+        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit" class="btn-primary hero-btn" data-cursor-hover>Me prévenir</button>
+      </div>
+      <p class="hn-status" role="status" aria-live="polite"></p>
+      <p class="hn-legal">Une à deux lettres par mois, désinscription en un clic. <a href="/confidentialite">Confidentialité</a></p>
+    </form>
     <div class="hero-cta">
       <a href="#reserve" class="btn-primary hero-btn" data-cursor-hover>Réserver ma table</a>
       <a href="#carte" class="btn-ghost hero-btn-ghost" data-cursor-hover>Découvrir la carte</a>
@@ -101,6 +116,7 @@
       <li><a href="https://share.google/3S4rHN7YgjlPMRwj6" target="_blank" rel="noopener" aria-label="Google — avis et itinéraire" data-cursor-hover><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M20 12.2c0-.6-.1-1.2-.2-1.7H12v3.3h4.5a3.9 3.9 0 0 1-1.7 2.5"/><path d="M14.8 16.3A6.5 6.5 0 1 1 16.4 7.4"/></svg></a></li>
     </ul>
   </div>
+  <p class="hero-legal"><a href="/mentions-legales">Mentions légales</a> · <a href="/confidentialite">Confidentialité</a></p>
   <a href="#concept" class="scroll-hint" data-cursor-hover>
     Faire défiler
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
@@ -636,7 +652,7 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=home-neon" defer></script>
+<script src="/assets/js/main.js?v=teaser" defer></script>
 
 </body>
 </html>
