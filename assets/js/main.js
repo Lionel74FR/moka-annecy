@@ -396,3 +396,11 @@ document.querySelectorAll('[data-cursor-hover]').forEach(el => {
     return `mailto:bonjour@moka-annecy.com?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
   }
 })();
+
+// ============ HERO : libellé d'ouverture → horaires une fois ouvert ============
+(function () {
+  const el = document.querySelector('[data-opening]');
+  if (!el) return;
+  const opening = new Date(el.dataset.opening + 'T00:00:00+02:00');
+  if (Date.now() >= opening.getTime()) el.textContent = 'Du mardi au samedi · dès 9h';
+})();

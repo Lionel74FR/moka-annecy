@@ -17,9 +17,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..800,100;1,9..144,400..800,100&family=Instrument+Sans:wght@300;400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/style.css?v=palette-v5">
+<link rel="stylesheet" href="/assets/css/style.css?v=home-neon">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"MOKA","description":"Café le matin, goûter l'après-midi, cocktails le soir.","telephone":"+33456190268","address":{"@type":"PostalAddress","streetAddress":"6 rue Vaugelas","postalCode":"74000","addressLocality":"Annecy","addressCountry":"FR"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday"],"opens":"09:00","closes":"20:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"09:00","closes":"01:00"}],"sameAs":["https://instagram.com/moka_annecy","https://www.facebook.com/profile.php?id=61595314552709","https://share.google/3S4rHN7YgjlPMRwj6"]}
+</script>
+<!-- Mesure d'audience Metricool (sans cookie) -->
+<script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"b783e98ba4ffbda7375d1c51414fdbb0"})});</script>
 </head>
-<body>
+<body class="has-hero">
 
 <!-- Custom cursor -->
 <div class="cursor-outer" id="cursorOuter"></div>
@@ -67,29 +72,34 @@
   <a href="#reserve" class="btn-primary">Réserver ma table</a>
 </div>
 
-<!-- Hero -->
-<section class="hero">
-  <div class="hero-sun-wrap" id="heroSunWrap"><div class="hero-sun"></div></div>
+<!-- Hero : néon de la salle, wordmark, ouverture -->
+<section class="hero hero-neon">
+  <svg class="hero-neon-line" viewBox="0 0 1640 624" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <filter id="neonGlow" x="-10%" y="-60%" width="120%" height="220%">
+        <feGaussianBlur stdDeviation="9" result="b1"/>
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b2"/>
+        <feMerge><feMergeNode in="b1"/><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <path class="neon-glow" d="M-40,150 C40,115 70,72 120,80 C190,92 200,152 260,150 C330,148 340,72 400,70 C470,68 490,125 560,120 C690,110 690,95 820,95 C950,95 970,125 1080,120 C1170,116 1180,68 1240,70 C1310,72 1320,152 1380,150 C1440,148 1450,78 1520,80 C1600,82 1640,130 1680,140" vector-effect="non-scaling-stroke"/>
+    <path class="neon-core" d="M-40,150 C40,115 70,72 120,80 C190,92 200,152 260,150 C330,148 340,72 400,70 C470,68 490,125 560,120 C690,110 690,95 820,95 C950,95 970,125 1080,120 C1170,116 1180,68 1240,70 C1310,72 1320,152 1380,150 C1440,148 1450,78 1520,80 C1600,82 1640,130 1680,140" vector-effect="non-scaling-stroke" filter="url(#neonGlow)"/>
+  </svg>
   <div class="hero-content">
-    <h1 class="hero-lines">
-      <span class="hero-line reveal-line" data-color="terracotta">
-        <span class="hero-line-prefix">À 9h ça</span>
-        <span class="hero-verb verb-morning">réconforte.</span>
-      </span>
-      <span class="hero-line reveal-line" data-color="disco">
-        <span class="hero-line-prefix">À 16h ça</span>
-        <span class="hero-verb verb-afternoon">pétille.</span>
-      </span>
-      <span class="hero-line reveal-line" data-color="powder">
-        <span class="hero-line-prefix">À 23h ça</span>
-        <span class="hero-verb verb-night">s'attarde.</span>
-      </span>
+    <h1 class="hero-title reveal-line">
+      <img src="/assets/img/moka-wordmark-creme.png" alt="MOKA" width="1400" height="341" class="hero-wordmark">
     </h1>
-    <p class="hero-sub">Café · Bubble tea · Cocktails · Cocon d'Annecy</p>
+    <p class="hero-opening reveal-line" data-opening="2026-10-15">Ouverture jeudi 15.10</p>
+    <p class="hero-sub">Le matin, l’après-midi, le soir <span class="hero-sub-addr">— 6&nbsp;rue&nbsp;Vaugelas, Annecy</span></p>
     <div class="hero-cta">
-      <a href="#reserve" class="btn-primary" data-cursor-hover>Réserver ma table</a>
-      <a href="#concept" class="btn-ghost" data-cursor-hover>Découvrir le lieu</a>
+      <a href="#reserve" class="btn-primary hero-btn" data-cursor-hover>Réserver ma table</a>
+      <a href="#carte" class="btn-ghost hero-btn-ghost" data-cursor-hover>Découvrir la carte</a>
     </div>
+    <ul class="hero-social hero-cta" aria-label="MOKA sur les réseaux">
+      <li><a href="https://instagram.com/moka_annecy" target="_blank" rel="noopener" aria-label="Instagram" data-cursor-hover><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a></li>
+      <li><a href="https://www.facebook.com/profile.php?id=61595314552709" target="_blank" rel="noopener" aria-label="Facebook" data-cursor-hover><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H9v3h2.5V21"/></svg></a></li>
+      <li><a href="https://share.google/3S4rHN7YgjlPMRwj6" target="_blank" rel="noopener" aria-label="Google — avis et itinéraire" data-cursor-hover><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M20 12.2c0-.6-.1-1.2-.2-1.7H12v3.3h4.5a3.9 3.9 0 0 1-1.7 2.5"/><path d="M14.8 16.3A6.5 6.5 0 1 1 16.4 7.4"/></svg></a></li>
+    </ul>
   </div>
   <a href="#concept" class="scroll-hint" data-cursor-hover>
     Faire défiler
@@ -569,7 +579,9 @@
             <h4>Nous joindre</h4>
             <p><a href="tel:+33456190268" data-cursor-hover>04 56 19 02 68</a><br>
             <a href="mailto:bonjour@moka-annecy.com" data-cursor-hover>bonjour@moka-annecy.com</a><br>
-            <a href="https://instagram.com/moka_annecy" target="_blank" rel="noopener" data-cursor-hover>@moka_annecy</a></p>
+            <a href="https://instagram.com/moka_annecy" target="_blank" rel="noopener" data-cursor-hover>Instagram</a><br>
+            <a href="https://www.facebook.com/profile.php?id=61595314552709" target="_blank" rel="noopener" data-cursor-hover>Facebook</a><br>
+            <a href="https://share.google/3S4rHN7YgjlPMRwj6" target="_blank" rel="noopener" data-cursor-hover>Avis Google</a></p>
           </div>
         </div>
       </div>
@@ -605,8 +617,9 @@
       <div class="footer-col">
         <h4>Suivez-nous</h4>
         <p>
-          <a href="https://instagram.com/moka_annecy" target="_blank" rel="noopener">@moka_annecy</a>
-          <a href="https://www.google.com/maps/search/?api=1&amp;query=MOKA+6+rue+Vaugelas+Annecy" target="_blank" rel="noopener">Google Maps</a>
+          <a href="https://instagram.com/moka_annecy" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/profile.php?id=61595314552709" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://share.google/3S4rHN7YgjlPMRwj6" target="_blank" rel="noopener">Google</a>
           <a href="#reserve">Réserver une table</a>
         </p>
       </div>
@@ -623,7 +636,7 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=palette-v5" defer></script>
+<script src="/assets/js/main.js?v=home-neon" defer></script>
 
 </body>
 </html>
