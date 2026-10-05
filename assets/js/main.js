@@ -404,3 +404,33 @@ document.querySelectorAll('[data-cursor-hover]').forEach(el => {
   const opening = new Date(el.dataset.opening + 'T00:00:00+02:00');
   if (Date.now() >= opening.getTime()) el.textContent = 'Du mardi au samedi · dès 9h';
 })();
+
+// ============ NEWSLETTER (mode teasing) ============
+(function () {
+  const form = document.querySelector('.hero-newsletter');
+  if (!form) return;
+  const input = form.querySelector('input[type="email"]');
+  const btn = form.querySelector('button[type="submit"]');
+  const status = form.querySelector('.hn-status');
+  const say = (msg, cls) => { status.textContent = msg; status.className = 'hn-status' + (cls ? ' ' + cls : ''); };
+  input.addEventListener('input', () => { input.classList.remove('invalid'); if (status.classList.contains('err')) say(''); });
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = input.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      input.classList.add('invalid'); input.focus();
+      return say('Entrez une adresse email valide.', 'err');
+    }
+    btn.disabled = true; say('Inscription en cours…');
+    try {
+      const r = await fetch('/api/newsletter', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, website: form.website.value })
+      });
+      if (r.ok) { form.classList.add('done'); say('C’est noté ! On vous écrit très vite. ✦', 'ok'); return; }
+      say('L’inscription n’est pas encore ouverte. Suivez-nous sur Instagram en attendant !', 'err');
+    } catch (err) {
+      say('Connexion impossible. Réessayez dans un instant.', 'err');
+    } finally { btn.disabled = false; }
+  });
+})();
