@@ -1446,3 +1446,8 @@ html.teaser .hero { min-height: 100vh; min-height: 100dvh; }
   .hn-row .btn-primary { width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) { .hero-newsletter { animation: none; opacity: 1; transform: none; } }
+
+/* Réservation : panneau Matalon POS ouvert depuis le bouton */
+.cta-content .btn-reserve { height: 56px; padding: 0 44px; font-size: 16px; }
+.cta-alt { margin-top: 22px; font-size: 14px; color: rgba(250, 244, 236, 0.85); }
+.cta-alt a { color: var(--cream); }

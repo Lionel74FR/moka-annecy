@@ -294,31 +294,6 @@ document.querySelectorAll('[data-cursor-hover]').forEach(el => {
     return out;
   }
 
-  const tableForm = document.querySelector('.booking-form[data-type="table"]');
-  if (tableForm) {
-    const dateInp = tableForm.querySelector('[name="date"]');
-    const timeSel = tableForm.querySelector('[name="time"]');
-    const status = tableForm.querySelector('.form-status');
-    dateInp.addEventListener('change', () => {
-      const slots = slotsFor(dateInp.value);
-      timeSel.innerHTML = '';
-      status.textContent = ''; status.className = 'form-status';
-      if (slots === null) {
-        timeSel.disabled = true;
-        timeSel.innerHTML = '<option value="">Choisir une date</option>';
-      } else if (!slots.length) {
-        timeSel.disabled = true;
-        timeSel.innerHTML = '<option value="">Fermé ce jour</option>';
-        status.textContent = 'MOKA est fermé le dimanche et le lundi. Choisissez un jour du mardi au samedi.';
-        status.className = 'form-status err';
-      } else {
-        timeSel.disabled = false;
-        timeSel.innerHTML = '<option value="">Choisir…</option>' +
-          slots.map(s => `<option value="${s}">${s.replace(':', 'h')}</option>`).join('');
-      }
-    });
-  }
-
   function validate(form) {
     let ok = true;
     form.querySelectorAll('[required]').forEach(el => {

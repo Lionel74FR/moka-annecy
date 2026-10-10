@@ -30,11 +30,18 @@ npx serve .
 
 Pour le domaine : Vercel → Project → Settings → Domains → ajouter `moka-annecy.com`.
 
-## Réservation en ligne (activation)
+## Réservation de table
 
-Les formulaires (table, atelier, privatisation) envoient vers `/api/reservation`, qui :
-- vérifie la demande (jours d'ouverture mar→sam, créneaux, champs obligatoires, anti-spam) ;
-- envoie un email au restaurant (répondre = confirmer au client) ;
+Gérée par la caisse Matalon POS : le script `reservation.js` (fin de `index.html`) ouvre le panneau de réservation de la caisse.
+Tout lien ou bouton portant `data-matalon-reserver` ouvre le panneau (icône de l'en-tête, accueil, menu mobile, section Réservation, pied de page).
+Le bouton flottant du script est désactivé (`data-bouton="non"`) ; le retirer réactive le bouton flottant.
+⚠ Le script pointe sur l'instance de test `matalon-pos-test.vercel.app` : changer l'URL au passage en production.
+
+## Demandes d'atelier et de privatisation (activation)
+
+Les formulaires Ateliers et Privatisation envoient vers `/api/reservation`, qui :
+- vérifie la demande (champs obligatoires, anti-spam) ;
+- envoie un email au restaurant (répondre = répondre au client) ;
 - envoie un accusé de réception au client.
 
 Tant que la clé n'est pas configurée, le formulaire affiche le téléphone et un lien email pré-rempli.
@@ -45,7 +52,5 @@ Tant que la clé n'est pas configurée, le formulaire affiche le téléphone et 
 4. Vercel → moka-annecy → Settings → Environment Variables :
    - `RESEND_API_KEY` = la clé
    - `RESERVATION_FROM` = `MOKA <reservations@moka-annecy.com>`
-   - `RESERVATION_TO` = adresse qui reçoit les réservations (défaut : bonjour@moka-annecy.com)
+   - `RESERVATION_TO` = adresse qui reçoit les demandes (défaut : bonjour@moka-annecy.com)
 5. Redéployer.
-
-Créneaux : toutes les 30 min, de 9h à 20h (mar→jeu) et de 9h à 0h30 (ven→sam), jusqu'à 90 jours à l'avance, 1 à 10 couverts.
