@@ -27,7 +27,7 @@
 /* Mode teasing jusqu'à l'ouverture : seule la home + newsletter + réseaux. Ajouter ?preview à l'URL pour voir le site complet. */
 (function(){var o=Date.parse('2026-10-15T00:00:00+02:00');if(Date.now()<o&&!/[?&]preview\b/.test(location.search))document.documentElement.classList.add('teaser');})();
 </script>
-<link rel="stylesheet" href="/assets/css/style.css?v=teaser">
+<link rel="stylesheet" href="/assets/css/style.css?v=resa1">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"MOKA","description":"Café le matin, goûter l'après-midi, cocktails le soir.","telephone":"+33456190268","address":{"@type":"PostalAddress","streetAddress":"6 rue Vaugelas","postalCode":"74000","addressLocality":"Annecy","addressCountry":"FR"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday"],"opens":"09:00","closes":"20:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"09:00","closes":"01:00"}],"sameAs":["https://instagram.com/moka_annecy","https://www.facebook.com/profile.php?id=61595314552709","https://share.google/3S4rHN7YgjlPMRwj6"]}
 </script>
@@ -59,7 +59,7 @@
       <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M6 18L18 6"/></svg>
     </button>
-    <a href="#reserve" class="btn-icon" aria-label="Réserver" data-cursor-hover>
+    <a href="#reserve" data-matalon-reserver class="btn-icon" aria-label="Réserver" data-cursor-hover>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
         <rect x="3" y="5" width="18" height="16" rx="3.5"/>
         <line x1="3" y1="10" x2="21" y2="10"/>
@@ -79,7 +79,7 @@
   <a href="#ateliers">Ateliers</a>
   <a href="#privatisation">Privatisation</a>
   <a href="#contact">Contact</a>
-  <a href="#reserve" class="btn-primary">Réserver ma table</a>
+  <a href="#reserve" data-matalon-reserver class="btn-primary">Réserver ma table</a>
 </div>
 
 <!-- Hero : néon de la salle, wordmark, ouverture -->
@@ -113,7 +113,7 @@
       <p class="hn-legal">Une à deux lettres par mois, désinscription en un clic. <a href="/confidentialite">Confidentialité</a></p>
     </form>
     <div class="hero-cta">
-      <a href="#reserve" class="btn-primary hero-btn" data-cursor-hover>Réserver ma table</a>
+      <a href="#reserve" data-matalon-reserver class="btn-primary hero-btn" data-cursor-hover>Réserver ma table</a>
       <a href="#carte" class="btn-ghost hero-btn-ghost" data-cursor-hover>Découvrir la carte</a>
     </div>
     <ul class="hero-social hero-cta" aria-label="MOKA sur les réseaux">
@@ -549,32 +549,8 @@
   <div class="cta-content">
     <h2 id="ctaTitle" class="reveal-chars">À ce soir.</h2>
     <p class="cta-sub">Réservez votre table en ligne. Ou passez sans prévenir : on trouve toujours une place au comptoir.</p>
-    <form class="booking-form booking-table" data-type="table" novalidate>
-      <div class="grid-4">
-        <label>Date<input type="date" name="date" required data-min-today data-open-days></label>
-        <label>Heure
-          <select name="time" required disabled><option value="">Choisir une date</option></select>
-        </label>
-        <label>Couverts
-          <select name="guests" required>
-            <option value="1">1 personne</option>
-            <option value="2" selected>2 personnes</option>
-            <option value="3">3 personnes</option><option value="4">4 personnes</option>
-            <option value="5">5 personnes</option><option value="6">6 personnes</option>
-            <option value="7">7 personnes</option><option value="8">8 personnes</option>
-            <option value="9">9 personnes</option><option value="10">10 personnes</option>
-          </select>
-        </label>
-        <label>Nom<input type="text" name="name" autocomplete="name" required></label>
-        <label>Téléphone<input type="tel" name="phone" autocomplete="tel" required></label>
-        <label>Email<input type="email" name="email" autocomplete="email" required></label>
-        <label class="span-2">Une précision ?<input type="text" name="message" placeholder="Anniversaire, terrasse, allergie…"></label>
-      </div>
-      <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <p class="form-hint">Plus de 10 personnes ? <a href="#privatisation">Faites une demande de groupe</a>.</p>
-      <button type="submit" class="btn-primary" data-cursor-hover>Réserver ma table</button>
-      <p class="form-status" role="status" aria-live="polite"></p>
-    </form>
+    <a href="#reserve" class="btn-primary btn-reserve" data-matalon-reserver data-cursor-hover>Réserver ma table</a>
+    <p class="cta-alt">Plus de 10 personnes ? <a href="#privatisation">Demande de groupe</a> · Par téléphone : <a href="tel:+33456190268">04 56 19 02 68</a></p>
   </div>
 </section>
 
@@ -642,7 +618,7 @@
           <a href="https://instagram.com/moka_annecy" target="_blank" rel="noopener">Instagram</a>
           <a href="https://www.facebook.com/profile.php?id=61595314552709" target="_blank" rel="noopener">Facebook</a>
           <a href="https://share.google/3S4rHN7YgjlPMRwj6" target="_blank" rel="noopener">Google</a>
-          <a href="#reserve">Réserver une table</a>
+          <a href="#reserve" data-matalon-reserver>Réserver une table</a>
         </p>
       </div>
     </div>
@@ -658,7 +634,9 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=teaser" defer></script>
+<!-- Réservation en ligne reliée à la caisse Matalon POS -->
+<script src="https://matalon-pos-test.vercel.app/reservation.js" data-etablissement="moka" data-bouton="non" data-logo="https://www.moka-annecy.com/assets/img/logo-night.png" async></script>
+<script src="/assets/js/main.js?v=resa1" defer></script>
 
 </body>
 </html>
