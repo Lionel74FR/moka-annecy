@@ -1451,3 +1451,8 @@ html.teaser .hero { min-height: 100vh; min-height: 100dvh; }
 .cta-content .btn-reserve { height: 56px; padding: 0 44px; font-size: 16px; }
 .cta-alt { margin-top: 22px; font-size: 14px; color: rgba(250, 244, 236, 0.85); }
 .cta-alt a { color: var(--cream); }
+
+/* Bouton flottant Matalon POS : réduit de 35 % (le script injecte ses styles après les nôtres, d'où html body) */
+html body .mtl-bouton { transform: scale(.65); transform-origin: bottom right; }
+/* Sur mobile, le lien légal du hero passe au-dessus du bouton flottant */
+@media (max-width: 599px) { .hero-legal { bottom: 72px; } }
