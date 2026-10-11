@@ -34,7 +34,7 @@ Pour le domaine : Vercel → Project → Settings → Domains → ajouter `moka-
 
 Gérée par la caisse Matalon POS : le script `reservation.js` (fin de `index.html`) ouvre le panneau de réservation de la caisse.
 Tout lien ou bouton portant `data-matalon-reserver` ouvre le panneau (icône de l'en-tête, accueil, menu mobile, section Réservation, pied de page).
-Le bouton flottant du script est désactivé (`data-bouton="non"`) ; le retirer réactive le bouton flottant.
+Le bouton flottant du script est actif (ajouter `data-bouton="non"` pour le masquer).
 ⚠ Le script pointe sur l'instance de test `matalon-pos-test.vercel.app` : changer l'URL au passage en production.
 
 ## Demandes d'atelier et de privatisation (activation)
