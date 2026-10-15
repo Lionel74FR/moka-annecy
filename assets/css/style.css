@@ -1133,7 +1133,7 @@ a.event-card { text-decoration: none; color: inherit; }
 .carte { background: var(--bg); transition: background var(--transition-slow); }
 .carte .section-intro { margin-bottom: 40px; }
 .carte-tabs {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px;
   margin-bottom: 40px;
 }
 .carte-tabs button {
@@ -1456,3 +1456,8 @@ html.teaser .hero { min-height: 100vh; min-height: 100dvh; }
 html body .mtl-bouton { transform: scale(.65); transform-origin: bottom right; }
 /* Sur mobile, le lien légal du hero passe au-dessus du bouton flottant */
 @media (max-width: 599px) { .hero-legal { bottom: 72px; } }
+
+/* Carte définitive : 5 onglets, listes « à plat » */
+.menu-flat { font-size: 15px; line-height: 1.6; margin: 0 0 6px; }
+.carte-panel .carte-legal { margin-top: 32px; }
+@media (max-width: 899px) { .carte-tabs button:last-child:nth-child(odd) { grid-column: 1 / -1; } }
