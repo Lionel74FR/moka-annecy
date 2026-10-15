@@ -27,7 +27,7 @@
 /* Mode teasing jusqu'à l'ouverture : seule la home + newsletter + réseaux. Ajouter ?preview à l'URL pour voir le site complet. */
 (function(){var o=Date.parse('2026-10-15T00:00:00+02:00');if(Date.now()<o&&!/[?&]preview\b/.test(location.search))document.documentElement.classList.add('teaser');})();
 </script>
-<link rel="stylesheet" href="/assets/css/style.css?v=resa2">
+<link rel="stylesheet" href="/assets/css/style.css?v=carte6">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"MOKA","description":"Café le matin, goûter l'après-midi, cocktails le soir.","telephone":"+33456190268","address":{"@type":"PostalAddress","streetAddress":"6 rue Vaugelas","postalCode":"74000","addressLocality":"Annecy","addressCountry":"FR"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday"],"opens":"09:00","closes":"20:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"09:00","closes":"01:00"}],"sameAs":["https://instagram.com/moka_annecy","https://www.facebook.com/profile.php?id=61595314552709","https://share.google/3S4rHN7YgjlPMRwj6"]}
 </script>
@@ -141,21 +141,21 @@
         <div class="name">Morning</div>
         <div class="time">9h — 14h</div>
         <div class="desc">Café d'origine, viennoiseries d'à côté, brunch léger. Le matin se prend lentement.</div>
-        <a href="#carte" class="arrow" data-carte-tab="morning" data-cursor-hover>Voir la carte →</a>
+        <a href="#carte" class="arrow" data-carte-tab="cuisine" data-cursor-hover>Voir la carte →</a>
       </div>
       <div class="moment-card afternoon reveal">
         <div class="num">N° 02</div>
         <div class="name">Afternoon</div>
         <div class="time">14h — 18h</div>
         <div class="desc">Bubble tea, goûter signature, pâtisserie. À deux, à six, en sortie d'école.</div>
-        <a href="#carte" class="arrow" data-carte-tab="afternoon" data-cursor-hover>Voir la carte →</a>
+        <a href="#carte" class="arrow" data-carte-tab="cafe" data-cursor-hover>Voir la carte →</a>
       </div>
       <div class="moment-card night reveal">
         <div class="num">N° 03</div>
         <div class="name">Night</div>
         <div class="time">18h — tard</div>
         <div class="desc">Cocktails création, classiques bien faits, verre entre amis. Un cocon où l'on s'attarde volontiers.</div>
-        <a href="#carte" class="arrow" data-carte-tab="night" data-cursor-hover>Voir la carte →</a>
+        <a href="#carte" class="arrow" data-carte-tab="soir" data-cursor-hover>Voir la carte →</a>
       </div>
     </div>
 
@@ -212,57 +212,45 @@
 <section id="carte" class="carte">
   <div class="section-container">
     <div class="carte-header reveal">
-      <div class="uppercase-label">La carte · Automne 2026</div>
+      <div class="uppercase-label">La carte</div>
       <h2 class="section-title" style="margin-top: 16px;">Trois moments, une carte.</h2>
-      <p class="section-intro">Café d'origine le matin, bubble tea et pâtisseries l'après-midi, cocktails le soir. Tous nos prix sont en euros, taxes et service compris.</p>
+      <p class="section-intro">Cuisine de 9h à 15h, café et bubble tea toute la journée, cocktails le soir. Tous nos prix sont en euros, taxes et service compris.</p>
     </div>
 
-    <div class="carte-tabs" role="tablist" aria-label="Moments de la carte">
-      <button role="tab" id="tab-morning" aria-controls="panel-morning" aria-selected="true" data-tab="morning" data-cursor-hover><span class="t-num">01</span>Morning<span class="t-time">9h — 14h</span></button>
-      <button role="tab" id="tab-afternoon" aria-controls="panel-afternoon" aria-selected="false" data-tab="afternoon" data-cursor-hover><span class="t-num">02</span>Afternoon<span class="t-time">14h — 18h</span></button>
-      <button role="tab" id="tab-night" aria-controls="panel-night" aria-selected="false" data-tab="night" data-cursor-hover><span class="t-num">03</span>Night<span class="t-time">18h — tard</span></button>
-      <button role="tab" id="tab-partage" aria-controls="panel-partage" aria-selected="false" data-tab="partage" data-cursor-hover><span class="t-num">04</span>À partager<span class="t-time">planches &amp; snacks</span></button>
+    <div class="carte-tabs" role="tablist" aria-label="Rubriques de la carte">
+      <button role="tab" id="tab-cuisine" aria-controls="panel-cuisine" aria-selected="true" data-tab="cuisine" data-cursor-hover><span class="t-num">01</span>Cuisine<span class="t-time">9h — 15h</span></button>
+      <button role="tab" id="tab-partage" aria-controls="panel-partage" aria-selected="false" data-tab="partage" data-cursor-hover><span class="t-num">02</span>À partager<span class="t-time">toute la journée</span></button>
+      <button role="tab" id="tab-cafe" aria-controls="panel-cafe" aria-selected="false" data-tab="cafe" data-cursor-hover><span class="t-num">03</span>Le café<span class="t-time">9h — 18h</span></button>
+      <button role="tab" id="tab-soir" aria-controls="panel-soir" aria-selected="false" data-tab="soir" data-cursor-hover><span class="t-num">04</span>Cocktails<span class="t-time">18h — tard</span></button>
+      <button role="tab" id="tab-cave" aria-controls="panel-cave" aria-selected="false" data-tab="cave" data-cursor-hover><span class="t-num">05</span>La cave<span class="t-time">vins &amp; spiritueux</span></button>
     </div>
 
-    <!-- MORNING -->
-    <div class="carte-panel" id="panel-morning" role="tabpanel" aria-labelledby="tab-morning">
-      <p class="carte-lead">Café d'origine, viennoiseries d'à côté, brunch léger. Le matin se prend lentement chez MOKA.</p>
+    <div class="carte-panel" id="panel-cuisine" role="tabpanel" aria-labelledby="tab-cuisine">
+      <p class="carte-lead">On déjeune ici sans regarder l'heure. Produits d'à côté, cuisine simple et bien faite.</p>
       <div class="carte-formules">
         <div class="formule">
-          <div class="f-lbl">Notre formule signature</div>
-          <div class="f-line"><span class="f-ttl">Brunch MOKA</span><span class="f-amt">16 €</span></div>
+          <div class="f-lbl">Notre formule brunch</div>
+          <div class="f-line"><span class="f-ttl">Brunch Moka</span><span class="f-amt">16 €</span></div>
           <p>Une boisson chaude, un jus pressé, une viennoiserie &amp; un bowl ou une tartine au choix.</p>
         </div>
         <div class="formule">
-          <div class="f-lbl">Notre formule express</div>
-          <div class="f-line"><span class="f-ttl">French p'tit déj</span><span class="f-amt">7 €</span></div>
-          <p>Baguette, beurre &amp; confiture, avec une boisson chaude au choix.</p>
+          <div class="f-lbl">Servi de 12h à 15h</div>
+          <div class="f-line"><span class="f-ttl">Déjeuner Moka</span><span class="f-amt">19 €</span></div>
+          <p>Une salade ou un chaud du midi, un dessert de la vitrine &amp; une boisson chaude.</p>
         </div>
       </div>
       <div class="carte-grid">
         <div class="menu-block">
-          <h3>Cafés</h3>
+          <h3>Viennoiseries</h3>
           <ul class="menu-list">
-            <li><span class="n">Espresso</span><span class="p">2,5</span></li>
-            <li><span class="n">Double espresso</span><span class="p">3,5</span></li>
-            <li><span class="n">Cortado</span><span class="p">3,5</span></li>
-            <li><span class="n">Cappuccino</span><span class="p">4</span></li>
-            <li><span class="n">Flat white</span><span class="p">4,5</span></li>
-            <li><span class="n">Latte</span><span class="p">5</span></li>
-            <li><span class="n">Mocaccino</span><span class="p">5,5</span></li>
+            <li><span class="n">Croissant pur beurre</span><span class="p">2</span></li>
+            <li><span class="n">Pain au chocolat</span><span class="p">2,5</span></li>
+            <li><span class="n">Brioche tranchée</span><span class="p">4</span></li>
           </ul>
-        </div>
-        <div class="menu-block">
-          <h3>Latte créations</h3>
+          <h3>Les œufs</h3>
           <ul class="menu-list">
-            <li><span class="n">Chai latte maison</span><span class="p">5</span></li>
-            <li><span class="n">Golden latte</span><span class="p">5</span></li>
-            <li><span class="n">Matcha bio</span><span class="p">5,5</span></li>
-            <li><span class="n">Chocolat chaud signature</span><span class="p">5</span></li>
-          </ul>
-          <h3>Thés &amp; infusions</h3>
-          <ul class="menu-list">
-            <li><span class="n">Earl Grey, Gunpowder bio, Rooibos vanille, Remède de grand-mère</span><span class="p">4,5</span></li>
+            <li><span class="n">Egg muffin Moka<small>Muffin toasté, œuf poché, bacon grillé, cheddar affiné</small></span><span class="p">9,5</span></li>
+            <li><span class="n">Œufs pochés, saumon fumé<small>Deux œufs pochés, saumon fumé, crème d'aneth, pain de campagne</small></span><span class="p">14</span></li>
           </ul>
         </div>
         <div class="menu-block">
@@ -275,140 +263,31 @@
           </ul>
         </div>
         <div class="menu-block">
-          <h3>Jus &amp; boissons fraîches</h3>
+          <h3>Salades <em>· le midi</em></h3>
           <ul class="menu-list">
-            <li><span class="n">Orange pressée</span><span class="p">5</span></li>
-            <li><span class="n">Pomme</span><span class="p">4</span></li>
-            <li><span class="n">Carotte-pomme-gingembre</span><span class="p">6</span></li>
-            <li><span class="n">Smoothie du moment</span><span class="p">6</span></li>
+            <li><span class="n">César revisitée<small>Poulet fermier grillé, sucrine, parmesan, croûtons de focaccia</small></span><span class="p">15</span></li>
+            <li><span class="n">Salade du Lac<small>Truite fumée, avocat, quinoa, aneth, citron</small></span><span class="p">18</span></li>
+            <li><span class="n">Bowl végétal<small>Céréales, légumes de saison, houmous, graines torréfiées</small></span><span class="p">13</span></li>
           </ul>
-          <h3>Viennoiseries</h3>
+        </div>
+        <div class="menu-block">
+          <h3>Les chauds du midi</h3>
           <ul class="menu-list">
-            <li><span class="n">Croissant pur beurre</span><span class="p">2</span></li>
-            <li><span class="n">Pain au chocolat</span><span class="p">2,2</span></li>
-            <li><span class="n">Brioche tranchée</span><span class="p">4</span></li>
+            <li><span class="n">Croque-monsieur maison</span><span class="p">11</span></li>
+            <li><span class="n">Croque-madame</span><span class="p">13</span></li>
+            <li><span class="n">Quiche du jour, mesclun</span><span class="p">12</span></li>
           </ul>
         </div>
       </div>
+      <p class="carte-legal">Nos plats sont préparés sur place et à la cuisine du Chardon d'Écosse.</p>
     </div>
-
-    <!-- AFTERNOON -->
-    <div class="carte-panel" id="panel-afternoon" role="tabpanel" aria-labelledby="tab-afternoon" hidden>
-      <p class="carte-lead">L'heure du bubble tea, du goûter signature et de la pâtisserie. À deux, à six, en sortie d'école ou en pause shopping.</p>
-      <div class="carte-formules">
-        <div class="formule">
-          <div class="f-lbl">Notre formule</div>
-          <div class="f-line"><span class="f-ttl">Afternoon Tea</span><span class="f-amt">14 €</span></div>
-          <p>Un thé d'exception, une boisson fraîche &amp; trois mignardises de la vitrine.</p>
-        </div>
-      </div>
-      <div class="carte-grid">
-        <div class="menu-block">
-          <h3>Bubble tea <em>· 6,5</em></h3>
-          <ul class="menu-list">
-            <li><span class="n">Classique · Matcha · Taro · Fraise<small>Lait d'avoine, perles popping, sirops maison +0,5</small></span><span class="p">6,5</span></li>
-          </ul>
-          <h3>Smoothies &amp; glacés</h3>
-          <ul class="menu-list">
-            <li><span class="n">Tropical, Forest, Green</span><span class="p">6,5</span></li>
-            <li><span class="n">Iced latte, Iced matcha</span><span class="p">5,5</span></li>
-            <li><span class="n">Limonade hibiscus</span><span class="p">5,5</span></li>
-          </ul>
-        </div>
-        <div class="menu-block">
-          <h3>Goûters salés</h3>
-          <ul class="menu-list">
-            <li><span class="n">Focaccia tomate-mozza</span><span class="p">8</span></li>
-            <li><span class="n">Croque-monsieur maison<small>Pain de campagne toasté, jambon, comté</small></span><span class="p">11</span></li>
-            <li><span class="n">Quiche du jour</span><span class="p">9</span></li>
-          </ul>
-        </div>
-        <div class="menu-block">
-          <h3>La pâtisserie</h3>
-          <ul class="menu-list">
-            <li><span class="n">Cookie chocolat noir</span><span class="p">3,5</span></li>
-            <li><span class="n">Brownie chocolat-pécan</span><span class="p">4,5</span></li>
-            <li><span class="n">Cheesecake citron</span><span class="p">5,5</span></li>
-            <li><span class="n">Carrot cake</span><span class="p">5,5</span></li>
-            <li><span class="n">Banana bread</span><span class="p">4,5</span></li>
-            <li><span class="n">Cinnamon roll</span><span class="p">4,5</span></li>
-            <li><span class="n">Financier amande</span><span class="p">2,5</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- NIGHT -->
-    <div class="carte-panel carte-panel-night" id="panel-night" role="tabpanel" aria-labelledby="tab-night" hidden>
-      <p class="carte-lead">Afterwork en semaine, bar le vendredi et le samedi. Cocktails création, classiques bien faits, un cocon où l'on s'attarde.</p>
-      <div class="carte-grid">
-        <div class="menu-block">
-          <h3>Cocktails signature <em>· 13</em></h3>
-          <ul class="menu-list">
-            <li><span class="n">MOKA Spritz<small><b>St-Germain</b>, prosecco, sureau maison, écorce d'orange</small></span><span class="p">13</span></li>
-            <li><span class="n">Golden Hour<small>Bourbon, abricot, citron, miel, romarin brûlé</small></span><span class="p">13</span></li>
-            <li><span class="n">Disco Sour<small><b>Patrón Silver</b>, citron vert, hibiscus, blanc d'œuf</small></span><span class="p">13</span></li>
-            <li><span class="n">Le Refuge<small><b>Bombay Sapphire</b>, camomille infusée, citron, tonic</small></span><span class="p">13</span></li>
-            <li><span class="n">Café MOKA<small><b>Grey Goose</b>, liqueur de café, espresso maison</small></span><span class="p">13</span></li>
-            <li><span class="n">Perles &amp; Rhum<small><b>Bacardí Carta Blanca</b>, fraise, citron vert, perles popping</small></span><span class="p">13</span></li>
-          </ul>
-        </div>
-        <div class="menu-block">
-          <div class="encart-spritz">
-            <div class="encart-title">Les spritz · <span>St-Germain</span></div>
-            <ul class="menu-list dotted">
-              <li><span class="n">St-Germain Spritz</span><span class="p">13</span></li>
-              <li><span class="n">Italicus Spritz</span><span class="p">14</span></li>
-              <li><span class="n">Limoncello Spritz</span><span class="p">12</span></li>
-              <li><span class="n">Martini Bianco Spritz</span><span class="p">12</span></li>
-              <li><span class="n">Spritz Aperol</span><span class="p">12</span></li>
-              <li><span class="n">Virgin Martini Spritz</span><span class="p">9</span></li>
-            </ul>
-            <p class="encart-cap">Le St-Germain Spritz, c'est notre MOKA Spritz. Servi au verre à vin, glace pilée, écorce d'orange.</p>
-          </div>
-          <h3>Mocktails <em>· 9</em></h3>
-          <ul class="menu-list">
-            <li><span class="n">Sundown<small><b>Martini Vibrante</b>, pamplemousse, soda</small></span><span class="p">9</span></li>
-            <li><span class="n">Garden<small><b>Martini Floréale</b>, tonic, concombre</small></span><span class="p">9</span></li>
-          </ul>
-          <p class="menu-note">Sans alcool, à boire toute la soirée.</p>
-        </div>
-        <div class="menu-block">
-          <h3>Les classiques <em>· 12</em></h3>
-          <ul class="menu-list">
-            <li><span class="n">Negroni</span><span class="p">12</span></li>
-            <li><span class="n">Margarita <b>Patrón</b></span><span class="p">12</span></li>
-            <li><span class="n">Old Fashioned</span><span class="p">12</span></li>
-            <li><span class="n">Gin Tonic <b>Bombay</b></span><span class="p">12</span></li>
-            <li><span class="n">Mojito <b>Bacardí</b></span><span class="p">12</span></li>
-            <li><span class="n">Daiquiri <b>Bacardí</b></span><span class="p">12</span></li>
-            <li><span class="n">Moscow Mule <b>Grey Goose</b></span><span class="p">13</span></li>
-          </ul>
-        </div>
-        <div class="menu-block">
-          <h3>Vins</h3>
-          <ul class="menu-list">
-            <li><span class="n">Notre sélection au verre · 12 cl<small>3 blancs, 3 rouges, 1 rosé, 1 pétillant</small></span><span class="p">6 — 9</span></li>
-            <li><span class="n">À la bouteille</span><span class="p">28 — 65</span></li>
-          </ul>
-          <h3>Bières</h3>
-          <ul class="menu-list">
-            <li><span class="n">Funambules Hazy IPA · 25 / 50 cl</span><span class="p">5 / 8,5</span></li>
-            <li><span class="n">Blonde de la Cour · 25 / 50 cl</span><span class="p">4,5 / 7,5</span></li>
-            <li><span class="n">Artisanales en bouteille</span><span class="p">5,5 — 7</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- À PARTAGER -->
     <div class="carte-panel" id="panel-partage" role="tabpanel" aria-labelledby="tab-partage" hidden>
-      <p class="carte-lead">Planches et snacks pour accompagner le verre, dès l'afterwork.</p>
+      <p class="carte-lead">Ça se partage au milieu de la table. Planches, petites assiettes, et ce qui sort de la vitrine.</p>
       <div class="carte-grid carte-grid-2">
         <div class="menu-block">
           <h3>Planches <em>· pour deux</em></h3>
           <ul class="menu-list">
-            <li><span class="n">Planche MOKA<small>Charcuterie de Savoie, comté affiné, focaccia, olives, pickles maison</small></span><span class="p">22</span></li>
+            <li><span class="n">Planche Moka<small>Charcuterie de Savoie, comté affiné, focaccia, olives, pickles maison</small></span><span class="p">22</span></li>
             <li><span class="n">Planche Bergère<small>Trois fromages, confiture maison, noix, pain de campagne</small></span><span class="p">18</span></li>
             <li><span class="n">Planche Mer<small>Saumon fumé, truite, terrine de poisson, focaccia, citron</small></span><span class="p">24</span></li>
           </ul>
@@ -419,13 +298,255 @@
             <li><span class="n">Olives marinées maison</span><span class="p">5</span></li>
             <li><span class="n">Houmous &amp; focaccia</span><span class="p">7</span></li>
             <li><span class="n">Stracciatella, tomate, basilic</span><span class="p">11</span></li>
-            <li><span class="n">Tartare de bœuf au couteau<small>Servi avec ses condiments, à assaisonner soi-même</small></span><span class="p">14</span></li>
+            <li><span class="n">Tartare de bœuf au couteau<small>Servi avec ses condiments, à assaisonner soi-même</small></span><span class="p">16</span></li>
+          </ul>
+          <h3>La vitrine</h3>
+          <p class="menu-flat">Pâtisseries maison du jour, affichées au comptoir : cookies, cheesecake, carrot cake, banana bread, cinnamon rolls, brownie, financiers.</p>
+        </div>
+      </div>
+    </div>
+    <div class="carte-panel" id="panel-cafe" role="tabpanel" aria-labelledby="tab-cafe" hidden>
+      <p class="carte-lead">Ça se boit toute la journée. Café de spécialité le matin, bubble tea l'après-midi.</p>
+      <div class="carte-formules">
+        <div class="formule">
+          <div class="f-lbl">Notre formule express</div>
+          <div class="f-line"><span class="f-ttl">French p'tit déj</span><span class="f-amt">7 €</span></div>
+          <p>Baguette, beurre &amp; confiture, avec une boisson chaude au choix.</p>
+        </div>
+      </div>
+      <div class="carte-grid">
+        <div class="menu-block">
+          <h3>Cafés</h3>
+          <ul class="menu-list">
+            <li><span class="n">Espresso</span><span class="p">2</span></li>
+            <li><span class="n">Cortado</span><span class="p">2,5</span></li>
+            <li><span class="n">Double espresso</span><span class="p">3,5</span></li>
+            <li><span class="n">Cappuccino</span><span class="p">4</span></li>
+            <li><span class="n">Mocaccino</span><span class="p">5,5</span></li>
+            <li><span class="n">Latte</span><span class="p">5</span></li>
+          </ul>
+          <p class="menu-note">Sirop +0,5 € : vanille, caramel, speculoos, noisette. Torréfaction de spécialité, extraite à la commande. Lait d'avoine, d'amande ou de soja sans supplément.</p>
+          <h3>Latte créations</h3>
+          <ul class="menu-list">
+            <li><span class="n">Chaï latte bio</span><span class="p">5</span></li>
+            <li><span class="n">Matcha bio</span><span class="p">5,5</span></li>
+            <li><span class="n">Chocolat chaud signature</span><span class="p">5</span></li>
+          </ul>
+        </div>
+        <div class="menu-block">
+          <h3>Thés &amp; infusions <em>· 4,5</em></h3>
+          <p class="menu-flat">Earl Grey · Menthe · Fruits rouges · Sencha · Camomille</p>
+          <h3>Bubble tea <em>· 6,5</em></h3>
+          <p class="menu-flat">Classique · Matcha · Taro · Fraise</p>
+          <p class="menu-note">Lait d'avoine, perles popping, sirops maison +0,5</p>
+          <h3>Jus &amp; boissons fraîches</h3>
+          <ul class="menu-list">
+            <li><span class="n">Orange pressée</span><span class="p">5</span></li>
+            <li><span class="n">Pomme-poires des Vergers Tissot</span><span class="p">4</span></li>
+            <li><span class="n">Carotte-pomme-gingembre</span><span class="p">6</span></li>
+            <li><span class="n">Limonade hibiscus</span><span class="p">5,5</span></li>
+          </ul>
+        </div>
+        <div class="menu-block">
+          <h3>Glacés</h3>
+          <ul class="menu-list">
+            <li><span class="n">Smoothie Tropical, Forest, Green</span><span class="p">6,5</span></li>
+            <li><span class="n">Iced latte, iced chaï, iced matcha</span><span class="p">5,5</span></li>
+            <li><span class="n">Moka iced tea maison</span><span class="p">5,5</span></li>
+          </ul>
+          <h3>Softs &amp; eaux</h3>
+          <ul class="menu-list">
+            <li><span class="n">Coca-Cola, Coca Zero</span><span class="p">4,5</span></li>
+            <li><span class="n">Limonade</span><span class="p">4,5</span></li>
+            <li><span class="n">Ginger beer</span><span class="p">4,5</span></li>
+            <li><span class="n">Fuze Tea</span><span class="p">4,5</span></li>
+            <li><span class="n">Badoit</span><span class="p">4</span></li>
+            <li><span class="n">Evian</span><span class="p">4</span></li>
+            <li><span class="n">Red Bull</span><span class="p">6</span></li>
           </ul>
         </div>
       </div>
     </div>
+    <div class="carte-panel carte-panel-night" id="panel-soir" role="tabpanel" aria-labelledby="tab-soir" hidden>
+      <p class="carte-lead">Cocktails chez MOKA. Créations maison, classiques twistés, et tout ce qui se boit sans alcool.</p>
+      <div class="carte-grid">
+        <div class="menu-block">
+          <h3>Signature <em>· 14</em></h3>
+          <ul class="menu-list">
+            <li><span class="n">Moka Velvet<small><b>Grey Goose</b>, liqueur de café, espresso &amp; vanille</small></span><span class="p">14</span></li>
+            <li><span class="n">Terracotta<small><b>Patrón Silver</b>, passion, citron vert &amp; sirop d'agave</small></span><span class="p">14</span></li>
+            <li><span class="n">Dolce Vita<small><b>Bombay Sapphire</b>, <b>St-Germain</b>, citron &amp; prosecco</small></span><span class="p">14</span></li>
+            <li><span class="n">Rouge Nuit<small><b>Grey Goose</b>, framboise, hibiscus &amp; citron</small></span><span class="p">14</span></li>
+            <li><span class="n">Goose Berry<small><b>Grey Goose Berry Rouge</b>, cranberry, limonade &amp; citron</small></span><span class="p">14</span></li>
+            <li><span class="n">Éclipse<small><b>Bacardí Carta Oro</b>, ananas, citron vert &amp; sirop de cannelle</small></span><span class="p">14</span></li>
+            <li><span class="n">Espresso Martini Patrón<small><b>Patrón XO Café</b>, espresso, sirop de sucre &amp; pincée de sel</small></span><span class="p">14</span></li>
+          </ul>
+        </div>
+        <div class="menu-block">
+          <h3>Classiques</h3>
+          <ul class="menu-list">
+            <li><span class="n">Espresso Martini</span><span class="p">13</span></li>
+            <li><span class="n">Long Island</span><span class="p">14</span></li>
+            <li><span class="n">Mojito <b>Bacardí</b></span><span class="p">13</span></li>
+            <li><span class="n">Paloma <b>Patrón</b></span><span class="p">14</span></li>
+            <li><span class="n">Moscow Mule</span><span class="p">13</span></li>
+            <li><span class="n">Margarita <b>Patrón</b></span><span class="p">14</span></li>
+            <li><span class="n"><b>Saint-Germain</b> Spritz</span><span class="p">12</span></li>
+            <li><span class="n">Aperol Spritz</span><span class="p">11</span></li>
+            <li><span class="n"><b>Martini Bianco</b> Spritz</span><span class="p">12</span></li>
+          </ul>
+          <p class="menu-note">Préparés par nos barmen selon l'affluence.</p>
+        </div>
+        <div class="menu-block">
+          <h3>Sans alcool <em>· 9</em></h3>
+          <ul class="menu-list">
+            <li><span class="n">Moka Spritz sans alcool<small><b>Martini Vibrante</b>, tonic &amp; eau pétillante</small></span><span class="p">9</span></li>
+            <li><span class="n">Virgin Mojito<small>Menthe, citron vert, sucre &amp; eau pétillante</small></span><span class="p">9</span></li>
+            <li><span class="n">Passion Fizz<small>Passion, citron, sirop de vanille &amp; eau pétillante</small></span><span class="p">9</span></li>
+          </ul>
+          <h3>Shooters</h3>
+          <ul class="menu-list">
+            <li><span class="n">Shooter classique</span><span class="p">5</span></li>
+            <li><span class="n">Shooter premium</span><span class="p">7</span></li>
+            <li><span class="n">Jäger Bomb</span><span class="p">8</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="carte-legal">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+    </div>
+    <div class="carte-panel carte-panel-night" id="panel-cave" role="tabpanel" aria-labelledby="tab-cave" hidden>
+      <p class="carte-lead">Ce qu’on garde derrière le bar. Bières, vins &amp; bulles, spiritueux au verre ou à la bouteille pour la table.</p>
+      <div class="carte-grid">
+        <div class="menu-block">
+          <h3>Bières <em>· 25 / 50 cl</em></h3>
+          <ul class="menu-list">
+            <li><span class="n">Pression blonde</span><span class="p">4,8 / 9</span></li>
+            <li><span class="n">Pression blanche</span><span class="p">5 / 9,5</span></li>
+            <li><span class="n">Pression IPA</span><span class="p">6 / 11</span></li>
+            <li><span class="n">Bière du moment</span><span class="p">6,5 / 12</span></li>
+            <li><span class="n">Corona</span><span class="p">7</span></li>
+          </ul>
+          <p class="menu-note">Pressions : sélection tournante.</p>
+          <h3>Champagne &amp; bulles <em>· à la coupe</em></h3>
+          <ul class="menu-list">
+            <li><span class="n">Laurent Perrier</span><span class="p">12</span></li>
+            <li><span class="n">Laurent Perrier Rosé</span><span class="p">14</span></li>
+            <li><span class="n">Prosecco</span><span class="p">8</span></li>
+          </ul>
+        </div>
+        <div class="menu-block">
+          <h3>Vin blanc <em>· 12 cl / btl</em></h3>
+          <ul class="menu-list">
+            <li><span class="n">Chardonnay — <b>Paul Mas</b></span><span class="p">7 / 38</span></li>
+            <li><span class="n">Chignin-Bergeron Les Amandiers</span><span class="p">9 / 42</span></li>
+            <li><span class="n">Chambre d'Amour — <b>moelleux</b></span><span class="p">8 / 40</span></li>
+          </ul>
+          <h3>Vin rosé <em>· 12 cl / btl</em></h3>
+          <ul class="menu-list">
+            <li><span class="n">Kairos — Provence</span><span class="p">6 / 40</span></li>
+          </ul>
+          <h3>Vin rouge <em>· 12 cl / btl</em></h3>
+          <ul class="menu-list">
+            <li><span class="n">Syrahvissante — <b>Louis Chèze</b></span><span class="p">7 / 38</span></li>
+            <li><span class="n">Le Grand Marrenon</span><span class="p">8 / 42</span></li>
+            <li><span class="n">Pinot Noir de Bourgogne</span><span class="p">9 / 45</span></li>
+          </ul>
+        </div>
+        <div class="menu-block">
+          <h3>Spiritueux au verre</h3>
+          <p class="menu-flat">Servis secs, sur glace ou allongés.</p>
+          <h3>Whisky</h3>
+          <ul class="menu-list">
+            <li><span class="n">Clan Campbell</span><span class="p">10</span></li>
+            <li><span class="n">Jack Daniel's</span><span class="p">12</span></li>
+            <li><span class="n">Lagavulin 16 ans</span><span class="p">15</span></li>
+          </ul>
+          <h3>Gin</h3>
+          <ul class="menu-list">
+            <li><span class="n">Bombay Sapphire</span><span class="p">10</span></li>
+            <li><span class="n">Hendrick's</span><span class="p">12</span></li>
+            <li><span class="n">Roku</span><span class="p">13</span></li>
+            <li><span class="n">Gin Mare</span><span class="p">14</span></li>
+            <li><span class="n">Citadelle</span><span class="p">14</span></li>
+          </ul>
+          <h3>Vodka</h3>
+          <ul class="menu-list">
+            <li><span class="n">Eristoff</span><span class="p">10</span></li>
+          </ul>
+          <p class="menu-note">Vodka-Red Bull : +1 €. La Grey Goose et la Grey Goose Berry Rouge sont servies en cocktail et en bouteille.</p>
+          <h3>Téquila</h3>
+          <ul class="menu-list">
+            <li><span class="n">Cazadores Blanco</span><span class="p">10</span></li>
+            <li><span class="n">Don Julio Reposado</span><span class="p">12</span></li>
+            <li><span class="n">Patrón Silver</span><span class="p">13</span></li>
+          </ul>
+        </div>
+        <div class="menu-block">
+          <h3>Rhum</h3>
+          <ul class="menu-list">
+            <li><span class="n">Bacardí Carta Blanca</span><span class="p">10</span></li>
+            <li><span class="n">Havana Club 7 ans</span><span class="p">10</span></li>
+            <li><span class="n">Diplomático Reserva</span><span class="p">12</span></li>
+            <li><span class="n">Don Papa</span><span class="p">12</span></li>
+            <li><span class="n">Zacapa 23</span><span class="p">14</span></li>
+            <li><span class="n">Santa Teresa 1796</span><span class="p">14</span></li>
+          </ul>
+          <h3>Cognac</h3>
+          <ul class="menu-list">
+            <li><span class="n">Hennessy VS</span><span class="p">13</span></li>
+          </ul>
+          <h3>Digestifs <em>· 10</em></h3>
+          <p class="menu-flat">Baileys · Limoncello · Génépi · Chartreuse verte · Chartreuse jaune · Get 27 · Menthe pastille</p>
+        </div>
+        <div class="menu-block">
+          <h3>À la bouteille · Champagne</h3>
+          <ul class="menu-list">
+            <li><span class="n">Laurent Perrier Brut</span><span class="p">85</span></li>
+            <li><span class="n">Laurent Perrier Brut Rosé</span><span class="p">145</span></li>
+            <li><span class="n">Veuve Clicquot Carte Jaune</span><span class="p">135</span></li>
+            <li><span class="n">Dom Pérignon</span><span class="p">380</span></li>
+          </ul>
+          <h3>À la bouteille · Vodka</h3>
+          <ul class="menu-list">
+            <li><span class="n">Eristoff</span><span class="p">80</span></li>
+            <li><span class="n">Grey Goose</span><span class="p">130</span></li>
+            <li><span class="n">Grey Goose Berry Rouge</span><span class="p">130</span></li>
+          </ul>
+          <p class="menu-note">Vodka-Red Bull : +10 € la bouteille.</p>
+          <h3>À la bouteille · Whisky</h3>
+          <ul class="menu-list">
+            <li><span class="n">Clan Campbell</span><span class="p">90</span></li>
+            <li><span class="n">Jack Daniel's</span><span class="p">100</span></li>
+          </ul>
+        </div>
+        <div class="menu-block">
+          <h3>À la bouteille · Gin</h3>
+          <ul class="menu-list">
+            <li><span class="n">Bombay Sapphire</span><span class="p">90</span></li>
+            <li><span class="n">Hendrick's</span><span class="p">115</span></li>
+            <li><span class="n">Gin Mare</span><span class="p">140</span></li>
+          </ul>
+          <h3>À la bouteille · Rhum</h3>
+          <ul class="menu-list">
+            <li><span class="n">Bacardí Carta Blanca</span><span class="p">80</span></li>
+            <li><span class="n">Havana Club 7 ans</span><span class="p">90</span></li>
+            <li><span class="n">Diplomático Reserva</span><span class="p">110</span></li>
+            <li><span class="n">Don Papa</span><span class="p">110</span></li>
+            <li><span class="n">Zacapa 23</span><span class="p">140</span></li>
+            <li><span class="n">Santa Teresa 1796</span><span class="p">150</span></li>
+          </ul>
+          <h3>À la bouteille · Téquila</h3>
+          <ul class="menu-list">
+            <li><span class="n">Cazadores Blanco</span><span class="p">100</span></li>
+            <li><span class="n">Don Julio Reposado</span><span class="p">130</span></li>
+            <li><span class="n">Patrón Silver</span><span class="p">150</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="carte-legal">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+    </div>
 
-    <p class="carte-legal">Prix en euros, taxes et service compris. L'abus d'alcool est dangereux pour la santé, à consommer avec modération. Liste des allergènes disponible au comptoir.</p>
+    <p class="carte-legal">Liste des allergènes disponible au comptoir.</p>
   </div>
 </section>
 
@@ -636,7 +757,7 @@
 
 <!-- Réservation en ligne reliée à la caisse Matalon POS -->
 <script src="https://matalon-pos-test.vercel.app/reservation.js" data-etablissement="moka" data-logo="https://www.moka-annecy.com/assets/img/logo-night.png" async></script>
-<script src="/assets/js/main.js?v=resa1" defer></script>
+<script src="/assets/js/main.js?v=carte6" defer></script>
 
 </body>
 </html>

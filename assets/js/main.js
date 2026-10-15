@@ -260,8 +260,9 @@ document.querySelectorAll('[data-cursor-hover]').forEach(el => {
     a.addEventListener('click', () => select(a.dataset.carteTab));
   });
   // Onglet par défaut = moment de la journée
-  const now = document.documentElement.getAttribute('data-time');
-  select(['morning', 'afternoon', 'night'].includes(now) ? now : 'morning');
+  // Onglet par défaut selon l'heure : cuisine jusqu'à 15h, café jusqu'à 18h, cocktails ensuite
+  const h = new Date().getHours();
+  select(h >= 18 || h < 6 ? 'soir' : h >= 15 ? 'cafe' : 'cuisine');
 })();
 
 // ============ RÉSERVATION & DEMANDES ============
