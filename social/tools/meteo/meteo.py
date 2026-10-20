@@ -110,6 +110,25 @@ BANK = {
  ],
 }
 
+# ---------- registre des photos : jamais deux fois la même photo sur la même plateforme ----------
+# Plusieurs fichiers d'une même prise de vue comptent comme une seule photo (même groupe).
+REGISTRE = os.path.join(REPO, 'social', 'photos-usage.json')
+GROUPE = {'oeufs_saumon': 'oeufs_saumon', 'ricotta': 'ricotta', 'egg_muffin': 'egg_muffin',
+          'tartine_saumon': 'tartine_saumon', 'matcha_viennoiseries': 'viennoiseries_matcha',
+          'viennoiseries_2': 'viennoiseries_matcha', 'ptit_dej_table': 'table_ptit_dej',
+          'jus_orange': 'table_ptit_dej', 'ptit_dej_dessus': 'ptit_dej_dessus'}
+
+def deja_utilisees(reseau='instagram'):
+    try: reg = json.load(open(REGISTRE))
+    except FileNotFoundError: return set()
+    return {e['photo'] for e in reg if e['reseau'] == reseau}
+
+def enregistrer(groupe, day, publication, reseau='instagram'):
+    try: reg = json.load(open(REGISTRE))
+    except FileNotFoundError: reg = []
+    reg.append(dict(photo=groupe, reseau=reseau, date=day.isoformat(), publication=publication))
+    json.dump(reg, open(REGISTRE, 'w'), ensure_ascii=False, indent=1)
+
 def day_line(wd):
     return 'Ce soir, cocktails jusqu’à 1 h' if wd in (4, 5) else 'Ouvert jusqu’à 20 h 30'
 
@@ -117,23 +136,32 @@ def choose(cat, day):
     opts = BANK[cat]
     if day.weekday() not in (1, 2, 3):  # pas de variante télétravail le vendredi / samedi
         opts = [o for o in opts if not o.get('bureau')] or opts
-    return opts[day.toordinal() % len(opts)]
+    used = deja_utilisees()
+    libres = [o for o in opts if GROUPE[o['p']] not in used]
+    if libres:
+        return libres[day.toordinal() % len(libres)], True
+    return opts[day.toordinal() % len(opts)], False  # toutes les photos déjà publiées : story texte
 
 def render(day, m):
-    cat = categorie(m); v = choose(cat, day)
+    cat = categorie(m); v, avec_photo = choose(cat, day)
     fmt = lambda s: s.replace('{tmin}', str(round(m['tmin']))).replace('{tmax}', str(round(m['tmax'])))
     kicker = fmt(v['k']); title = [fmt(x) for x in v['t']]
     title[-1] = title[-1].rstrip('.')
     info = [day_line(day.weekday()) if x == 'DAY' else fmt(x) for x in v['i']]
-    T = THEMES[v['th']]; W, H, PH = 1080, 1920, 820
+    T = THEMES[v['th'] if avec_photo else 'bx']; W, H, PH = 1080, 1920, 820
     im = Image.new('RGB', (W, H), T['bg'])
-    ph = ImageOps.exif_transpose(Image.open(os.path.join(HERE, 'photos', v['p'] + '.jpg'))).convert('RGB')
-    im.paste(cover(ph, W, PH, 0.55), (0, 0)); d = ImageDraw.Draw(im)
-    y = PH + 100; C(d, y, kicker, sans(fit(d, kicker, sans, 46, 960), 700), T['acc']); y += 145
-    ts = min(fit(d, t, ft, 170, 960) for t in title)
+    if avec_photo:
+        ph = ImageOps.exif_transpose(Image.open(os.path.join(HERE, 'photos', v['p'] + '.jpg'))).convert('RGB')
+        im.paste(cover(ph, W, PH, 0.55), (0, 0))
+        y, tmax = PH + 100, 170
+    else:
+        y, tmax = 480, 230  # story texte seule, centrée
+    d = ImageDraw.Draw(im)
+    C(d, y, kicker, sans(fit(d, kicker, sans, 46, 960), 700), T['acc']); y += 145 if avec_photo else 200
+    ts = min(fit(d, t, ft, tmax, 960) for t in title)
     for t in title: C(d, y, t, ft(ts), T['ink']); y += int(ts * 0.98)
     y += 10
-    for s in info: C(d, y, s, sans(fit(d, s, lambda z: sans(z, 650), 60, 960), 650), T['ink']); y += 84
+    for s in info: C(d, y, s, sans(fit(d, s, lambda z: sans(z, 650), 60 if avec_photo else 66, 960), 650), T['ink']); y += 84 if avec_photo else 92
     wm = wordmark(170, T['ink']); im.paste(wm, ((W - wm.width) // 2, H - 230), wm)
     C(d, H - 120, '6 rue Vaugelas · Annecy', sans(36, 500), T['soft'])
     os.makedirs(OUT_DIR, exist_ok=True)
@@ -141,7 +169,9 @@ def render(day, m):
     k = (kicker[:1] + kicker[1:].lower()).replace('annecy', 'Annecy')
     parts = [k, ' '.join(title)] + info
     alt = norm(' '.join(p if p.endswith(('?', '!', '.')) else p + '.' for p in parts))
-    return dict(file=os.path.relpath(fn, REPO), alt=alt, categorie=cat, meteo=m, photo=v['p'])
+    if avec_photo: enregistrer(GROUPE[v['p']], day, 'story météo')
+    return dict(file=os.path.relpath(fn, REPO), alt=alt, categorie=cat, meteo=m,
+                photo=GROUPE[v['p']] if avec_photo else None)
 
 if __name__ == '__main__':
     a = argparse.ArgumentParser()
