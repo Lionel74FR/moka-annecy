@@ -180,5 +180,33 @@
   "date": "2026-10-24",
   "publication": "story brunch",
   "format": "story"
+ },
+ {
+  "photo": "ptit_dej_dessus",
+  "reseau": "facebook",
+  "date": "2026-10-21",
+  "publication": "story 9h",
+  "format": "story"
+ },
+ {
+  "photo": "viennoiseries_matcha",
+  "reseau": "facebook",
+  "date": "2026-10-22",
+  "publication": "story pause café",
+  "format": "story"
+ },
+ {
+  "photo": "bar",
+  "reseau": "facebook",
+  "date": "2026-10-23",
+  "publication": "story ce soir",
+  "format": "story"
+ },
+ {
+  "photo": "oeufs_saumon",
+  "reseau": "facebook",
+  "date": "2026-10-24",
+  "publication": "story brunch",
+  "format": "story"
  }
 ]
