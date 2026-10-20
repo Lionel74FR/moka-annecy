@@ -8,7 +8,7 @@ Usage :
 
 Écrit social/meteo/AAAA-MM-JJ.jpg (1080×1920) et affiche un JSON :
   {"file": ..., "alt": ..., "categorie": ..., "meteo": {...}}
-Ne publie rien : la publication se fait ensuite (Metricool).
+Story texte + logo uniquement (pas de photo). Ne publie rien : la publication se fait ensuite (Metricool).
 Jours d'ouverture : mardi → samedi. Dimanche et lundi : le script refuse (exit 2).
 """
 import argparse, datetime as dt, json, os, re, sys, urllib.request
@@ -136,11 +136,8 @@ def choose(cat, day):
     opts = BANK[cat]
     if day.weekday() not in (1, 2, 3):  # pas de variante télétravail le vendredi / samedi
         opts = [o for o in opts if not o.get('bureau')] or opts
-    used = deja_utilisees()
-    libres = [o for o in opts if GROUPE[o['p']] not in used]
-    if libres:
-        return libres[day.toordinal() % len(libres)], True
-    return opts[day.toordinal() % len(opts)], False  # toutes les photos déjà publiées : story texte
+    # Règle MOKA : la story météo est toujours en texte + logo, sans photo.
+    return opts[day.toordinal() % len(opts)], False
 
 def render(day, m):
     cat = categorie(m); v, avec_photo = choose(cat, day)
@@ -169,7 +166,6 @@ def render(day, m):
     k = (kicker[:1] + kicker[1:].lower()).replace('annecy', 'Annecy')
     parts = [k, ' '.join(title)] + info
     alt = norm(' '.join(p if p.endswith(('?', '!', '.')) else p + '.' for p in parts))
-    if avec_photo: enregistrer(GROUPE[v['p']], day, 'story météo')
     return dict(file=os.path.relpath(fn, REPO), alt=alt, categorie=cat, meteo=m,
                 photo=GROUPE[v['p']] if avec_photo else None)
 

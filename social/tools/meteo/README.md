@@ -8,4 +8,5 @@ Chaque matin d'ouverture (mardi → samedi), une tâche planifiée :
 
 Les messages sont dans `BANK` (meteo.py). Règles : tutoiement, titres sans point final,
 9h / 16€ / 20h30 collés, pas de bubble tea tant qu'il n'est pas servi, photos réelles uniquement.
-Pour ajouter une photo : la déposer dans `photos/` (JPG ~1200 px) et la référencer dans `BANK`.
+La story météo est toujours en texte + logo, sans photo.
+Registre des photos publiées : `social/photos-usage.json` (une photo = au plus 1 post et 1 story par plateforme).
