@@ -1461,3 +1461,6 @@ html body .mtl-bouton { transform: scale(.65); transform-origin: bottom right; }
 .menu-flat { font-size: 15px; line-height: 1.6; margin: 0 0 6px; }
 .carte-panel .carte-legal { margin-top: 32px; }
 @media (max-width: 899px) { .carte-tabs button:last-child:nth-child(odd) { grid-column: 1 / -1; } }
+
+/* Événements : la grille s'adapte au nombre de cartes */
+.events-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
