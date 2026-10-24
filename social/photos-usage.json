@@ -208,5 +208,124 @@
   "date": "2026-10-24",
   "publication": "story brunch",
   "format": "story"
+ },
+ {
+  "photo": "cesar",
+  "reseau": "instagram",
+  "date": "2026-10-28",
+  "publication": "story le midi",
+  "format": "story"
+ },
+ {
+  "photo": "cesar",
+  "reseau": "facebook",
+  "date": "2026-10-28",
+  "publication": "story le midi",
+  "format": "story"
+ },
+ {
+  "photo": "cesar",
+  "reseau": "google",
+  "date": "2026-10-28",
+  "publication": "publication déjeuner",
+  "format": "post"
+ },
+ {
+  "photo": "table_cocktails",
+  "reseau": "instagram",
+  "date": "2026-10-29",
+  "publication": "post afterwork",
+  "format": "post"
+ },
+ {
+  "photo": "table_cocktails",
+  "reseau": "facebook",
+  "date": "2026-10-29",
+  "publication": "post afterwork",
+  "format": "post"
+ },
+ {
+  "photo": "rouge_nuit",
+  "reseau": "instagram",
+  "date": "2026-10-30",
+  "publication": "post cocktail de la semaine",
+  "format": "post"
+ },
+ {
+  "photo": "rouge_nuit",
+  "reseau": "facebook",
+  "date": "2026-10-30",
+  "publication": "post cocktail de la semaine",
+  "format": "post"
+ },
+ {
+  "photo": "dolce_vita",
+  "reseau": "instagram",
+  "date": "2026-10-30",
+  "publication": "story ce soir",
+  "format": "story"
+ },
+ {
+  "photo": "dolce_vita",
+  "reseau": "facebook",
+  "date": "2026-10-30",
+  "publication": "story ce soir",
+  "format": "story"
+ },
+ {
+  "photo": "dolce_vita",
+  "reseau": "google",
+  "date": "2026-10-30",
+  "publication": "publication week-end",
+  "format": "post"
+ },
+ {
+  "photo": "terracotta",
+  "reseau": "instagram",
+  "date": "2026-10-31",
+  "publication": "story ce soir",
+  "format": "story"
+ },
+ {
+  "photo": "terracotta",
+  "reseau": "facebook",
+  "date": "2026-10-31",
+  "publication": "story ce soir",
+  "format": "story"
+ },
+ {
+  "photo": "planche_highball",
+  "reseau": "instagram",
+  "date": "2026-11-05",
+  "publication": "post à partager",
+  "format": "post"
+ },
+ {
+  "photo": "planche_highball",
+  "reseau": "facebook",
+  "date": "2026-11-05",
+  "publication": "post à partager",
+  "format": "post"
+ },
+ {
+  "photo": "moka_velvet",
+  "reseau": "instagram",
+  "date": "2026-11-06",
+  "publication": "post cocktail de la semaine",
+  "format": "post"
+ },
+ {
+  "photo": "moka_velvet",
+  "reseau": "facebook",
+  "date": "2026-11-06",
+  "publication": "post cocktail de la semaine",
+  "format": "post"
+ },
+ {
+  "photo": "etagere_bouteilles",
+  "reseau": "google",
+  "date": "2026-11-06",
+  "publication": "publication week-end",
+  "format": "post"
  }
 ]
