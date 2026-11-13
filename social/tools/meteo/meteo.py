@@ -85,9 +85,9 @@ def categorie(m):
 # {tmin} {tmax} remplacés ; DAY = ligne selon le jour ; BUREAU = variante télétravail (mardi → jeudi)
 BANK = {
  'pluie': [
-   dict(k='IL PLEUT SUR ANNECY', t=['Viens te mettre', 'au sec'], i=['Café chaud et brunch dès 9 h', 'DAY'], p='ricotta', th='bx'),
+   dict(k='IL PLEUT SUR ANNECY', t=['Viens te mettre', 'au sec'], i=['Café chaud et brunch dès 10 h', 'DAY'], p='ricotta', th='bx'),
    dict(k='{tmax}° ET DE LA PLUIE', t=['Ton bureau', 'au chaud'], i=['Wifi, prises et un bon latte', 'DAY'], p='matcha_viennoiseries', th='bx', bureau=True),
-   dict(k='JOUR DE PLUIE', t=['Croissant', 'et café chaud'], i=['Viennoiseries du jour dès 9 h', 'DAY'], p='viennoiseries_2', th='cr'),
+   dict(k='JOUR DE PLUIE', t=['Croissant', 'et café chaud'], i=['Viennoiseries du jour dès 10 h', 'DAY'], p='viennoiseries_2', th='cr'),
  ],
  'orage': [dict(k='ORAGES PRÉVUS', t=['Reste', 'à l’abri'], i=['Café, brunch, déjeuner', 'DAY'], p='matcha_viennoiseries', th='bx')],
  'neige': [dict(k='IL NEIGE SUR ANNECY', t=['Viens te', 'réchauffer'], i=['Cappuccino, chaï latte, chocolat chaud', 'DAY'], p='viennoiseries_2', th='bx')],
@@ -96,16 +96,16 @@ BANK = {
    dict(k='{tmin}° CE MATIN', t=['Ton bureau', 'au chaud'], i=['Wifi, prises et un bon latte', 'DAY'], p='viennoiseries_2', th='cr', bureau=True),
  ],
  'gris': [
-   dict(k='CIEL GRIS SUR ANNECY', t=['Un latte', 'et ça repart'], i=['Café chaud dès 9 h', 'DAY'], p='oeufs_saumon', th='bx'),
+   dict(k='CIEL GRIS SUR ANNECY', t=['Un latte', 'et ça repart'], i=['Café chaud dès 10 h', 'DAY'], p='oeufs_saumon', th='bx'),
    dict(k='JOURNÉE GRISE', t=['Ton bureau', 'au chaud'], i=['Wifi, prises et un bon latte', 'DAY'], p='matcha_viennoiseries', th='cr', bureau=True),
-   dict(k='CIEL GRIS SUR ANNECY', t=['Brunch', 'dès 9 h'], i=['Brunch Moka jusqu’à 15 h', 'DAY'], p='egg_muffin', th='cr'),
+   dict(k='CIEL GRIS SUR ANNECY', t=['Brunch', 'dès 10 h'], i=['Brunch Moka jusqu’à 15 h', 'DAY'], p='egg_muffin', th='cr'),
  ],
  'soleil': [
-   dict(k='GRAND SOLEIL · {tmax}°', t=['Un jus pressé', 'au soleil'], i=['Orange pressée dès 9 h', 'DAY'], p='jus_orange', th='cr'),
+   dict(k='GRAND SOLEIL · {tmax}°', t=['Un jus pressé', 'au soleil'], i=['Orange pressée dès 10 h', 'DAY'], p='jus_orange', th='cr'),
    dict(k='GRAND SOLEIL · {tmax}°', t=['Jus pressé', 'et brunch'], i=['Brunch Moka jusqu’à 15 h', 'DAY'], p='ptit_dej_table', th='bx'),
  ],
  'beau_frais': [
-   dict(k='SOLEIL ET {tmin}° CE MATIN', t=['Café chaud,', 'ciel bleu'], i=['Brunch dès 9 h', 'DAY'], p='ptit_dej_table', th='bx'),
+   dict(k='SOLEIL ET {tmin}° CE MATIN', t=['Café chaud,', 'ciel bleu'], i=['Brunch dès 10 h', 'DAY'], p='ptit_dej_table', th='bx'),
    dict(k='BEAU MAIS FRAIS', t=['Un cappuccino', 'au soleil'], i=['Viennoiseries du jour', 'DAY'], p='matcha_viennoiseries', th='cr'),
  ],
 }
