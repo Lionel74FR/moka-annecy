@@ -277,7 +277,7 @@ document.querySelectorAll('[data-cursor-hover]').forEach(el => {
     inp.max = iso(maxDate);
   });
 
-  // Horaires : mar-jeu 9h-20h30, ven-sam 9h-1h. Dernière arrivée : 20h / 00h30.
+  // Horaires : mar-jeu 10h-20h30, ven-sam 10h-1h. Dernière arrivée : 20h / 00h30.
   function slotsFor(dateStr) {
     if (!dateStr) return null;
     const [y, m, d] = dateStr.split('-').map(Number);
@@ -287,7 +287,7 @@ document.querySelectorAll('[data-cursor-hover]').forEach(el => {
     const out = [];
     const isToday = dateStr === iso(new Date());
     const nowMin = new Date().getHours() * 60 + new Date().getMinutes() + 30;
-    for (let t = 9 * 60; t <= last; t += 30) {
+    for (let t = 10 * 60; t <= last; t += 30) {
       if (isToday && t < nowMin) continue;
       const h = Math.floor(t / 60) % 24;
       out.push(`${pad(h)}:${pad(t % 60)}`);
@@ -378,7 +378,7 @@ document.querySelectorAll('[data-cursor-hover]').forEach(el => {
   const el = document.querySelector('[data-opening]');
   if (!el) return;
   const opening = new Date(el.dataset.opening + 'T00:00:00+02:00');
-  if (Date.now() >= opening.getTime()) el.textContent = 'Du mardi au samedi · dès 9h';
+  if (Date.now() >= opening.getTime()) el.textContent = 'Du mardi au samedi · dès 10h';
 })();
 
 // ============ NEWSLETTER (mode teasing) ============
